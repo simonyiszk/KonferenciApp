@@ -1,0 +1,54 @@
+contact-page {
+* {
+    font-family: "Open Sans";
+}
+    ion-thumbnail img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .picture {
+        border: 3px solid color($colors, light-primary);
+    }
+
+    .name {
+        color: color($colors, light-primary);
+        font-family: "Open Sans Bold";
+        font-size: 16px;
+    }
+
+    .pre-tag {
+        font-family: "Open Sans Bold";
+    } 
+
+    .titulus { 
+        color: color($colors, light-grey);
+        font-family: "Open Sans Semibold";
+        text-transform: uppercase;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin: 0px;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .text, .text a {
+        color: color($colors, text-color);
+        font-family: "Open Sans Bold";
+        font-size: 12px;
+        text-decoration: none;
+        margin: 0px;
+    }
+
+    h2 { 
+        color: color($colors, secondary);
+        font-family: "Open Sans Bold";
+        letter-spacing: -0.2pt;
+        margin-bottom: 15pt;
+    }
+
+    .address {
+        color: color($colors, light-grey) !important;
+        font-family: "Open Sans Semibold" !important;
+      }
+}

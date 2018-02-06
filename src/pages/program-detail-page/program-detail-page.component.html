@@ -1,0 +1,30 @@
+<ion-header class="header-bg" [ngClass]="{' androidHeader': isAndroid }" no-border>
+    <ion-navbar  hideBackButton="true">
+        <button class="back" ion-button clear large navPop>
+            <ion-icon name="arrow-back"></ion-icon> Vissza
+        </button>
+        <konfapp-header></konfapp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header" padding>
+
+    <div class="shit-header">
+        <img [src]="picture" (load)="hideTempPicture()" align="left" margin class="profil-picture" [ngClass]="{'no-vis': !loadedPicture }">
+        <img src="resources/bird.png" align="left" margin class="profil-picture" *ngIf="!loadedPicture">
+        <div class="content-header">
+            <h4 no-margin class="performer">{{performer}}</h4>
+            <span no-margin class="titulus">{{titulus}}</span>
+            <h5 no-margin class="title">{{title}}</h5>
+        </div>
+    </div>
+
+
+    <div class="content" [innerHTML]="text"></div>
+    <br>
+    <div class="question">
+      <ask-question
+        [pid]="selectedProgramId">
+      </ask-question>
+    </div>
+</ion-content>

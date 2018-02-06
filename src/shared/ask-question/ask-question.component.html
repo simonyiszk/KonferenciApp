@@ -1,0 +1,17 @@
+<div class="question-div">
+  <h5 class="ask">Kérdezz az előadótól!</h5>
+
+  <p class="desc">Itt tudod feltenni az előadáshoz kapcsolódó kérdésedet. Az előadás végén a beérkezett kérdések közül  a konferanszié teszi fel a legérdekesebbeket.</p>
+
+  <div class="input-w">
+    <label for="name">Név: </label>
+    <input [(ngModel)]="name" id="name" type="text" class="input">
+  </div>
+
+  <div class="input-w">
+    <label for="question">Kérdés: </label>
+    <input [(ngModel)]="question" id="question" class="input">
+  </div>
+
+  <button class="submit" (click)="sendQuestion()">Küldés</button>
+</div> 

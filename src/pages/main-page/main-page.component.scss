@@ -1,0 +1,41 @@
+main-page {
+* {
+    font-family: "Open Sans";
+}
+
+  ion-col {
+    display: flex !important;
+    align-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 10px;
+
+    .first {
+      height: 90px;
+    }
+
+    .second {
+      max-height: 70px;
+    }
+
+    .center {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  h2 {
+    color: color($colors, secondary);
+    text-transform: uppercase;
+    font-family: "Open Sans Bold";
+    letter-spacing: -0.2pt;
+    height: 9pt;
+    margin-bottom: 15pt;
+    margin-top: 0pt;
+  }
+
+  .about {
+    color: color($colors, text-color);
+    letter-spacing: -0.1pt;
+  }
+}

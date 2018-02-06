@@ -1,0 +1,27 @@
+expo-page {
+* {
+    font-family: "Open Sans";
+}
+    .expo-map {
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    }
+
+    .id {
+        color: color($colors, light-primary) !important;
+        font-size: 18px !important;
+        font-family: "Open Sans Semibold" !important;
+    }
+
+    .name {
+        color: color($colors, light-grey) !important;
+        font-size: 18px !important;
+        font-family: "Open Sans Semibold" !important;
+        padding-left: 8px;
+    }
+
+    h2 {
+        display: inline-flex;
+    }
+
+}

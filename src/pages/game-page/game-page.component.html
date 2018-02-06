@@ -1,0 +1,25 @@
+<ion-header class="header-bg" [ngClass]="{' androidHeader': isAndroid }" no-border>
+    <ion-navbar>
+        <konfapp-header></konfapp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header" padding>
+    <h2>A Nyereményjátékról</h2>
+    <p class="about">
+        Két előadás között látogasd meg a Konferencia Expo-t és <b>nyerj egy iPad-et</b> vagy egy <b>LG 29 colos monitort!</b> Az aulában lévő kiállítók mindegyike tárt karokkal vár. Nincs más dolgod, mint megoldani egy kis feladatot vagy fejtörőt, amiért cserébe kapsz egy QR kódot, amit az alkalmazás segítségével olvashatsz be. <b>Mindössze két QR kódot kell összegyűjtened</b>, hogy nyerhess: egy Szakkolisat és egy cégest. Jó feladatmegoldást és vadászatot!
+        <br>A <b>sorsolás a NASA előadása után</b> esedékes, így érdemes addig itt maradnod. :)
+    </p>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-50>
+                <button class="submit" (click)="qrScan()">QR Beolvasás</button>
+            </ion-col>
+            <ion-col width-50>
+                <button class="submit right" (click)="alertData()" *ngIf="noname">Adatok megadása</button>
+                <button class="submit right" (click)="alertData()" *ngIf="!noname">Adatok módosítása</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

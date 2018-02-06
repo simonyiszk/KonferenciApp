@@ -1,0 +1,17 @@
+<ion-header class="header-bg" [ngClass]="{' androidHeader': isAndroid }" no-border>
+    <ion-navbar>
+        <konfapp-header></konfapp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header">
+  <img [src]="picture" (load)="loadedPicture()" class="expo-map">
+  <ion-list *ngIf="loaded">
+        <ion-item *ngFor="let stand of allStand" (click)="openModal(stand.name, stand.description)">
+            <ion-thumbnail item-right>
+                <img src="{{stand.src}}">
+            </ion-thumbnail>
+            <h2><p class="id">{{ stand.id }}.</p> <p class="name">{{ stand.name }}</p></h2>
+        </ion-item>
+    </ion-list>
+</ion-content>

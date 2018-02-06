@@ -1,0 +1,91 @@
+timetable-page {
+    * {
+        font-family: "Open Sans";
+    }
+
+
+
+// -------------------------------- [ Timetable ] --------------------------------
+
+    .timetable-time {
+        font-size: 10px;
+    }
+
+    .label-md, .label-ios {
+        margin: 0px;
+    }
+
+    .timetable-roomselector {
+        margin-bottom: 20px;
+    }
+
+    .first {
+        border-top: 2px solid color($colors, light-primary) !important;
+    }
+
+    ion-col {
+        display: flex;
+    }
+
+    .content, .content-time {
+        margin: auto;
+    }
+
+    .content {
+        margin-left: 0px !important;
+    }
+
+    ion-row {
+        border-collapse:collapse !important;
+        border: 2px solid color($colors, light-primary) !important;
+        border-top: 0px !important;
+        height: 76px !important;
+    }
+
+    .timetable-title {
+        font-size: 8pt;
+    }
+
+    .timetable-row-info {
+        border-left: 2px solid color($colors, light-primary) !important;
+        padding-right: 20px;
+    }
+
+    .item-block, .item-inner {
+        border: none !important;
+    }
+
+    .fa-chevron-right {
+        color: color($colors, light-primary) !important;
+        fill: color($colors, light-primary) !important;
+        position: absolute;
+        right: 15px;
+        top: 29px;
+        font-size: 18px;
+    }
+
+    p.timetable-performer {
+        font-size: 8pt;
+        color: color($colors, light-primary) !important;
+    }
+
+    p.timetable-title {
+        font-size: 9pt;
+        color: color($colors, secondary) !important;
+    }
+
+    .break {
+      height: 55px !important;
+      border-left: 0px !important;
+      border-right: 0px !important;
+    }
+
+    .break-text {
+        color: color($colors, light-grey);
+        font-family: "Open Sans Semibold";
+    }
+
+    .break-content {
+        margin: auto !important;
+    }
+}

@@ -1,0 +1,49 @@
+ask-question {
+    * {
+        font-family: "Open Sans";
+    }
+
+  input {
+    border: none;
+    background: white;
+    border-bottom: 1px solid color($colors, light-primary);
+    width: 73%;
+  }
+
+  label {
+    color: color($colors, text-color) !important;
+        font-family: "Open Sans Bold";
+    width: 25%;
+    margin-top: 10px;
+  }
+
+  .input-w {
+    margin-bottom: 15px;
+  }
+
+  .input-w label, .input-w input {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;    
+  }
+
+  .desc {
+      margin-top: 0px !important;
+  }
+
+  .ask {
+    text-transform: uppercase;
+    color: color($colors, secondary);
+    font-family: "Open Sans Bold";
+  }
+
+  .submit {
+    width: auto;
+    height: auto;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 5px;
+    background: color($colors, light-primary);
+    font-family: "Open Sans Semibold";
+  }
+}

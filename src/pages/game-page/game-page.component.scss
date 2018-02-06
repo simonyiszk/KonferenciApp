@@ -1,0 +1,33 @@
+game-page {
+    
+  .submit {
+        height: auto;
+        padding: 10px 15px;
+        color: white;
+        border-radius: 5px;
+        background: color($colors, light-primary);
+        width: 100%;
+        font-family: "Open Sans Semibold";
+    }
+
+    h2 { 
+        color: color($colors, secondary);
+        text-transform: uppercase;
+        font-family: "Open Sans Bold";
+        letter-spacing: -0.2pt;
+        height: 9pt;
+        margin-bottom: 15pt;
+        font-size: 22px;
+    }
+
+    b {
+        font-weight: bold;
+        font-family: "Open Sans Bold";
+    }
+    
+    .about {
+        color: color($colors, text-color);
+        letter-spacing: -0.1pt;
+        font-family: "Open Sans";
+    }
+}

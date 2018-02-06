@@ -1,0 +1,63 @@
+<ion-header class="header-bg" [ngClass]="{' androidHeader': isAndroid }" no-border>
+    <ion-navbar>
+        <konfapp-header></konfapp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header">
+
+
+    <div padding *ngIf="loaded">
+        <div class="timetable-roomselector">
+            <ion-segment [(ngModel)]="selectedRoom" color="secondary">
+                <ion-segment-button *ngFor="let room of timetable" value="{{room.room}}" (click)="changeRoom()"> {{room.room}} </ion-segment-button>
+            </ion-segment>
+        </div>
+        <div [ngSwitch]="selectedRoom">
+            <div *ngFor="let room of filteredTimeTable">
+                <ion-list *ngSwitchCase="room.room" class="timeline" (swipe)="swipeEvent($event)">
+                    <ion-item text-wrap *ngFor="let program of room.programs; let i = index" on-tap="getProgramData(program.id, program.break)">
+                        <ion-grid class="no-padding">
+                             <ion-row [ngClass]='{first: i === 0}' *ngIf="!isBreak(program.break)">
+                                <ion-col width-25 class="timetable-row-time">
+                                    <div class="content-time">
+                                        <p class="timetable-time">{{program.time}}</p>
+                                    </div>
+                                </ion-col> 
+                                <ion-col width-75 class="timetable-row-info">
+                                    <div class="content">
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                        <p class="timetable-performer">{{program.performer}}</p>
+                                        <p class="timetable-title" text-uppercase>{{program.title}}</p>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row class="break" *ngIf="isBreak(program.break)">
+                                <ion-col>
+                                    <div class="break-content">
+                                        <h2 class="break-text" text-uppercase text-center>Szünet</h2>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-item>
+
+                    <!--
+                    <ion-item *ngFor="let program of room.programs" on-tap="getProgramData(program.id)">
+                        <ion-avatar item-left>
+                            <h2>{{program.time}}</h2>
+                        </ion-avatar>
+                        <h3>{{program.performer}}</h3>
+                        <p>{{program.title}}</p>
+                    </ion-item>
+                    -->
+
+                </ion-list>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</ion-content>

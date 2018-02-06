@@ -1,0 +1,100 @@
+program-detail-page {
+    ion-content {
+        font-family: "Open Sans";
+    }
+
+    .scroll-content {
+        margin-top: 60px !important;
+    }
+
+    img {
+        margin-right: 5px !important;
+    }
+
+    .content-header {
+        text-align: left;
+        margin-left: 110px !important;
+    }
+
+    .question {
+      margin-bottom: 30px;
+    }
+
+    .shit-header {
+        min-height: 100px;
+    }
+
+    .content {
+        text-align: left;
+        margin-bottom: 20px;
+        margin-top: 20px !important;
+    }
+
+    .facebook-checkin-wrapper {
+        width: 100%;
+        text-align: center;
+    }
+
+    .toolbar-content {
+        display: inline-flex;
+    }
+
+    konfapp-header {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .back {
+        color: color($colors, white);
+        position: absolute;
+        font-size: 16px;
+        margin-left: -5px;
+        margin-top: -3px;
+
+        ion-icon {
+            margin-right: 5px;
+            margin-top: 1px;
+        }
+    }
+
+    .titulus {
+      color: color($colors, light-grey);
+        font-family: "Open Sans Semibold";
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .title {
+        color: color($colors, secondary);
+        font-family: "Open Sans Bold";
+        text-transform: uppercase;
+        margin-top: 8px;
+    }
+
+    .performer {
+      color: color($colors, light-primary);
+        font-family: "Open Sans Semibold";
+    }
+
+    .no-vis {
+        display: none;
+    }
+
+    .profil-picture {
+      border: 3px solid color($colors, light-primary);
+      margin-top: 5px !important;
+      margin-bottom: 5px !important;
+      margin-left: 0px !important;
+      width: 100px;
+    }
+
+    .subscribe-btn {
+      width: 100%;
+      height: auto;
+      padding: 10px 25px;
+      color: white;
+      border-radius: 5px;
+      background: color($colors, light-primary);
+      text-align: center;
+    }
+}
