@@ -38,29 +38,38 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  header: #42162C,
+  inactive-tab: #aaa
 );
 
-
+$toolbar-background: color($colors, header);
+$tabs-background: color($colors, header);
+$tabs-tab-color-active: #fff;
+$tabs-ios-tab-color-inactive: color($colors, inactive-tab);
+$tabs-md-tab-color-inactive: color($colors, inactive-tab);
+$tabs-wp-tab-color-inactive: color($colors, inactive-tab);
+$background-color: #581D3A;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
 
+//$toolbar-ios-title-text-align: center;
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+//$toolbar-md-title-text-align: center;
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
+//$toolbar-wp-title-text-align: center;
 
 
 // App Theme
