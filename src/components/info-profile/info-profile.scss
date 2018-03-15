@@ -1,3 +1,33 @@
 info-profile {
-
+    .container {
+        display: flex;
+        border: 1px solid black;
+        margin: 2rem 1rem;
+        p {
+            margin: 0.25rem;
+            color: white;
+        }
+    }
+    img {
+        width: 8rem;
+        height: 8rem;
+    }
+    .details {
+        margin-left: 1rem;
+    }
+    .name {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .title {
+       
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .phone {
+        
+    }
+    .email {
+        
+    }
 }

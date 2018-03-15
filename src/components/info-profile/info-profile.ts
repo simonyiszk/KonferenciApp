@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the InfoProfileComponent component.
@@ -12,11 +12,10 @@ import { Component } from '@angular/core';
 })
 export class InfoProfileComponent {
 
-  text: string;
+  @Input('content') content;
 
   constructor() {
-    console.log('Hello InfoProfileComponent Component');
-    this.text = 'Hello World';
+    
   }
 
 }
