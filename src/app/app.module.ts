@@ -9,6 +9,8 @@ import { ExpoPage } from '../pages/expo/expo';
 import { InformationPage } from '../pages/information/information';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { ComponentsModule } from '../components/components.module';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -23,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
