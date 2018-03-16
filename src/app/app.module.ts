@@ -9,6 +9,7 @@ import { ProgramPage } from '../pages/program/program';
 import { ExpoPage } from '../pages/expo/expo';
 import { InformationPage } from '../pages/information/information';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LocationPage } from '../pages/location/location';
 
 import { ComponentsModule } from '../components/components.module';
 
@@ -22,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProgramPage,
     ExpoPage,
     InformationPage,
-    TabsPage
+    TabsPage,
+    LocationPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProgramPage,
     ExpoPage,
     InformationPage,
-    TabsPage
+    TabsPage,
+    LocationPage
   ],
   providers: [
     StatusBar,
