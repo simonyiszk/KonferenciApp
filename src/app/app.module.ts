@@ -13,6 +13,7 @@ import { LocationPage } from '../pages/location/location';
 import { GamePage } from '../pages/game/game';
 
 import { ComponentsModule } from '../components/components.module';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     ComponentsModule,
     HttpModule
   ],
