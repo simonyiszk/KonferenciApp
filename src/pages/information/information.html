@@ -8,9 +8,9 @@
 
 <ion-content padding class="white-background">
   <h1 class="section-white">Kapcsolat</h1>
-  <info-profile [content]="data[0]"></info-profile>
-  <info-profile [content]="data[1]"></info-profile>
-  <info-profile [content]="data[2]"></info-profile>
+  <div>
+    <info-profile *ngFor="let d of data" [content]="d"></info-profile>
+  </div>
 
   <h1 class="section-white">Támogatóink</h1>
 
