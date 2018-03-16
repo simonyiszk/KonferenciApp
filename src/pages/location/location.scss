@@ -1,3 +1,19 @@
 page-location {
-
+    .section-white {
+        color: white;
+        text-align: center;
+    }
+    .loc-top{
+        color:white;
+        font-size: 2rem;
+        font-weight: bold;
+        margin:0;
+    }
+    .loc-bot{
+        color: white;
+        margin:0;
+    }
+    #map {
+        height: 70%;
+    }
 }
