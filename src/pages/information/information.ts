@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class InformationPage {
 
-  data: any;
+  data: any = [];
 
   constructor(public http: Http, public navCtrl: NavController) {
     this.loadData();
@@ -18,14 +18,14 @@ export class InformationPage {
 
   loadData(){
     //this.file.readAsText(this.file.applicationDirectory + "www/assets", "data.json").then(...)
-    /*this.http.get('../../assets/data/organizers.json')
+    this.http.get('../../assets/data/organizers.json')
     .map(res => res.json())
     .subscribe(data => {
       this.data = data;
-      console.log(data);
-    });*/
+      //console.log(data);
+    });
     /** TODO: Add img key */
-    this.data = JSON.parse(`[  
+    /*this.data = JSON.parse(`[  
       {  
          "name":"Tóth Bence",
          "title":"Főrendező",
@@ -44,7 +44,7 @@ export class InformationPage {
          "email":"vegera.tamas@simonyi.bme.hu",
          "phone":"+36 ‭70 413 5912"
       }
-   ]`);
-   console.log(this.data);
+   ]`);*/
+   //console.log(this.data);
   }
 }
