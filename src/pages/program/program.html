@@ -7,5 +7,15 @@
 </ion-header>
 
 <ion-content>
-  
+  <ion-segment [(ngModel)]="events" color="light" (ionChange)="change()">
+    <ion-segment-button value="ib025">
+      IB025
+    </ion-segment-button>
+    <ion-segment-button value="favorite">
+      <ion-icon name="heart"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="ib028">
+      IB028
+    </ion-segment-button>
+  </ion-segment>
 </ion-content>

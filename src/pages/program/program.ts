@@ -7,7 +7,13 @@ import { NavController } from 'ionic-angular';
 })
 export class ProgramPage {
 
+  events:any;
+
   constructor(public navCtrl: NavController) {
+    this.events = 'ib025';
+  }
+
+  change(){
 
   }
 
