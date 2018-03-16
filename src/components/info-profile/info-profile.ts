@@ -18,4 +18,8 @@ export class InfoProfileComponent {
     
   }
 
+  clicked(email:string){
+    if(email)
+      window.open(`mailto:${email}`, '_system');
+  }
 }
