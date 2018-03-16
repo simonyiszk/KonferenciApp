@@ -3,10 +3,6 @@ info-profile {
         display: flex;
         border: 1px solid black;
         margin: 2rem 1rem;
-        p {
-            margin: 0.25rem;
-            color: white;
-        }
     }
     img {
         width: 8rem;
@@ -14,6 +10,10 @@ info-profile {
     }
     .details {
         margin-left: 1rem;
+        p {
+            margin: 0.25rem;
+            color: white;
+        }
     }
     .name {
         font-size: 2rem;

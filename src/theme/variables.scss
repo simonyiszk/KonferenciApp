@@ -40,6 +40,7 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
   header: #42162C,
+  bgcolor: #6C1624,
   inactive-tab: #aaa
 );
 
@@ -49,7 +50,7 @@ $tabs-tab-color-active: #fff;
 $tabs-ios-tab-color-inactive: color($colors, inactive-tab);
 $tabs-md-tab-color-inactive: color($colors, inactive-tab);
 $tabs-wp-tab-color-inactive: color($colors, inactive-tab);
-$background-color: #6C1624;
+$background-color: color($colors, bgcolor);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
