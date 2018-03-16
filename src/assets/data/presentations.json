@@ -1,0 +1,52 @@
+[
+{
+	"programs": [
+        {
+            "break": "0",
+            "id": "6",
+            "performer": "Paul Verhoef",
+            "picture": "http:...",
+            "text": "<p>...</p>",
+            "time": "13:35-14:05",
+            "title": "Satellite navigation on new waves",
+            "titulus": "Director of the Galileo Programme and Navigation-related Activities (D\/NAV), ESA"
+        },
+        {
+            "break": "0",
+            "id": "2",
+            "performer": "Teszt Elek",
+            "picture": "http:...",
+            "text": "<p>...</p>",
+            "time": "13:35-14:05",
+            "title": "Satellite navigation on new waves",
+            "titulus": "Director of the Galileo Programme and Navigation-related Activities (D\/NAV), ESA"
+        }
+    ],
+	"room": "IB028"
+},
+{
+	"programs": [
+        {
+            "break": "0",
+            "id": "5",
+            "performer": "Elek Teszt",
+            "picture": "http:...",
+            "text": "<p>...</p>",
+            "time": "13:35-14:05",
+            "title": "Satellite navigation on new waves",
+            "titulus": "Director of the Galileo Programme and Navigation-related Activities (D\/NAV), ESA"
+        },
+        {
+            "break": "0",
+            "id": "1",
+            "performer": "Jó a nevem",
+            "picture": "http:...",
+            "text": "<p>...</p>",
+            "time": "13:35-14:05",
+            "title": "Satellite navigation on new waves",
+            "titulus": "Director of the Galileo Programme and Navigation-related Activities (D\/NAV), ESA"
+        }
+    ],
+	"room": "IB025"
+}
+]
