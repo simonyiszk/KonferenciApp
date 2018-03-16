@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the MainButtonComponent component.
@@ -12,11 +12,11 @@ import { Component } from '@angular/core';
 })
 export class MainButtonComponent {
 
-  text: string;
+  @Input('title') title:string;
+  @Input('icon') icon:string;
 
   constructor() {
-    console.log('Hello MainButtonComponent Component');
-    this.text = 'Hello World';
+    
   }
 
 }
