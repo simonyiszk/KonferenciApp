@@ -1,4 +1,12 @@
 <!-- Generated template for the EventListItemComponent component -->
-<div>
-  {{text}}
+<div class="container">
+  <div [innerHTML]=formattedTime()>
+  </div>
+  <div>
+    <div>{{presentation.title}}</div>
+    <div>{{presentation.performer}}</div>
+  </div>
+  <div>
+    <ion-icon name="heart"></ion-icon>
+  </div>
 </div>

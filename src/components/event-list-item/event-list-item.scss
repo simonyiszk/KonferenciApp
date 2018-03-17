@@ -1,3 +1,8 @@
 event-list-item {
-
+    .container {
+        display: flex;
+        color: white;
+        border: 1px solid black;
+        margin: 1rem;
+    }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the EventListItemComponent component.
@@ -12,11 +12,16 @@ import { Component } from '@angular/core';
 })
 export class EventListItemComponent {
 
-  text: string;
+  @Input('presentation') presentation: any;
 
   constructor() {
-    console.log('Hello EventListItemComponent Component');
-    this.text = 'Hello World';
   }
-
+  formattedTime():string {
+    const times = this.presentation.time.split('-');
+    console.log(times);
+    return (
+      `<div>${times[0]}</div>
+      <div>${times[1]}</div>`
+    )
+  }
 }

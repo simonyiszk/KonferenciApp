@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-segment [(ngModel)]="events" color="light" (ionChange)="change()">
     <ion-segment-button value="IB025">
       IB025
@@ -18,4 +18,7 @@
       IB028
     </ion-segment-button>
   </ion-segment>
+  <div *ngFor="let pres of (data ? data : [])">
+    <event-list-item [presentation]="pres"></event-list-item>
+  </div>
 </ion-content>

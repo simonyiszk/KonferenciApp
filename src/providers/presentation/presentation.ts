@@ -39,7 +39,7 @@ export class PresentationProvider {
     return this.load().map((data: any) => {
       if(segment === 'favorite'){
         //TODO
-        return data;
+        return data["IB028"];
       }
       else {
         return data[segment];
