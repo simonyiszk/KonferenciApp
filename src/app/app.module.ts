@@ -11,6 +11,7 @@ import { InformationPage } from '../pages/information/information';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LocationPage } from '../pages/location/location';
 import { GamePage } from '../pages/game/game';
+import { PresentationDetailsPage } from '../pages/presentation-details/presentation-details';
 
 import { ComponentsModule } from '../components/components.module';
 import { IonicStorageModule } from '@ionic/storage';
@@ -28,7 +29,8 @@ import { PresentationProvider } from '../providers/presentation/presentation';
     InformationPage,
     TabsPage,
     LocationPage,
-    GamePage
+    GamePage,
+    PresentationDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { PresentationProvider } from '../providers/presentation/presentation';
     InformationPage,
     TabsPage,
     LocationPage,
-    GamePage
+    GamePage,
+    PresentationDetailsPage
   ],
   providers: [
     StatusBar,
