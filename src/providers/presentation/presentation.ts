@@ -15,19 +15,35 @@ export class PresentationProvider {
   data: any;
 
   constructor(public http: Http) {
-    console.log('Hello PresentationProvider Provider');
+    
   }
 
   load(): any {
     if (this.data) {
       return Observable.of(this.data);
     } else {
-      return this.http.get('../../assets/data/presentations.json')
-      .map(res => res.json())
-      .subscribe(data => {
-        this.data = data;
-        console.log(data);
-      });
+    return this.http.get('../../assets/data/presentations.json')
+      .map(this.processData, this);
     }
+  }
+  processData(data: any) {
+    this.data = {};
+    let datatmp = data.json();
+    datatmp.forEach(element => {
+      this.data[element["room"]] = element["programs"];
+    });
+    return this.data;
+  }
+
+  filterPresentation(segment: string) {
+    return this.load().map((data: any) => {
+      if(segment === 'favorite'){
+        //TODO
+        return data;
+      }
+      else {
+        return data[segment];
+      }
+    });
   }
 }
