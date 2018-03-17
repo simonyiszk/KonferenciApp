@@ -14,11 +14,19 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class PresentationDetailsPage {
 
+  presentation: any;
+  question: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.presentation = this.navParams.data.presentation;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PresentationDetailsPage');
+  makeItFavorite(){
+    console.log(this.presentation.id, " was marked as favorite");
   }
 
+  sendQuestion(){
+    //TODO
+    console.log("question was sent", this.question);
+  }
 }

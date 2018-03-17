@@ -7,12 +7,36 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>PresentationDetails</ion-title>
+    <ion-title>Program</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div class="outer-container">
+    <div class="details-section">
+      <img src="../../assets/imgs/logo.png" />
+      <div>
+        <p class="details-name">{{presentation.performer}}</p>
+        <p class="details-titulus">{{presentation.titulus}}</p>
+      </div>
+    </div>
+    <div class="title-section">
+      <div>{{presentation.title}}</div>
+      <ion-icon name="heart" (click)="makeItFavorite()"></ion-icon>
+    </div>
+    <div class="desc-section" [innerHTML]=presentation.text>
+    </div>
+    <div class="text-section">
+      Kérdés
+      <strong>{{presentation.performer}}</strong> részére:
+    </div>
+    <form (ngSubmit)="sendQuestion()">
+      <ion-item class="input-section">
+        <ion-textarea [(ngModel)]="question" name="question"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>Küldés</button>
+    </form>
+  </div>
 </ion-content>

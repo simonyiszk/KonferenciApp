@@ -1,3 +1,31 @@
 page-presentation-details {
+    .outer-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .details-section{
+        display: flex;
+        > img {
+            width: 10rem;
+            height: 10rem;
+        }
+        .details-name{
 
+        }
+        .details-titulus{
+
+        }
+    }
+    .title-section{
+        display: flex
+    }
+    .desc-section{
+
+    }
+    .text-section{
+
+    }
+    .input-section{
+        background-color: white;
+    }
 }
