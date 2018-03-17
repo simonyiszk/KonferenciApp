@@ -16,7 +16,8 @@ export class UserProvider {
 
   constructor(public http: Http, public storage: Storage) {
     this.storage.get("logged").then((value) => {
-      this.loggedIn = value ? value : 0;
+      //this.loggedIn = value ? value : 0; UNTIL LOGING IS NOT WORKING
+      this.loggedIn = 1;
     })
     .then(() => {
       if(this.loggedIn){
@@ -28,9 +29,9 @@ export class UserProvider {
   }
 
   addFavorite(id:number){
-    //this.storage.set("username", [...this.favorites, id]).then(() => {
+    this.storage.set("username", [...this.favorites, id]).then(() => {
       this.favorites.push(id);
-    //});
+    });
   }
   removeFavorite(id:number){
     let tmp = [...this.favorites];
@@ -39,9 +40,9 @@ export class UserProvider {
       tmp.splice(index, 1);
       index = tmp.indexOf(id);
     }
-    //this.storage.set("username", tmp).then(() => {
+    this.storage.set("username", tmp).then(() => {
       this.favorites = tmp;
-    //});
+    });
   }
   isFavorite(id:number){
     return this.favorites.indexOf(id)>-1;
