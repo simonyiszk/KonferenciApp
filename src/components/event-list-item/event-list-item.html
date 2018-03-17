@@ -7,6 +7,6 @@
     <div>{{presentation.performer}}</div>
   </div>
   <div class="heartDiv" (click)="favoriteClicked()">
-    <ion-icon name="heart"></ion-icon>
+    <ion-icon name="{{isFavorite()}}"></ion-icon>
   </div>
 </div>

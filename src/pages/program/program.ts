@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { PresentationDetailsPage } from '../presentation-details/presentation-details';
 
 import { PresentationProvider } from '../../providers/presentation/presentation';
+import { UserProvider } from '../../providers/user/user';
 
 @Component({
   selector: 'page-program',
@@ -12,14 +13,14 @@ import { PresentationProvider } from '../../providers/presentation/presentation'
 export class ProgramPage {
 
   data: any;
-  events:string;
+  events: string;
 
-  constructor(public presData: PresentationProvider, public navCtrl: NavController) {
+  constructor(public user: UserProvider, public presData: PresentationProvider, public navCtrl: NavController) {
     this.events = 'IB025';
     this.change();
   }
 
-  change(){
+  change() {
     console.log("CHANGED");
     this.presData.filterPresentation(this.events).subscribe((data: any) => {
       this.data = data;
@@ -27,11 +28,16 @@ export class ProgramPage {
     });
   }
 
-  openPresentation(ev){
+  openPresentation(ev) {
     this.navCtrl.push(PresentationDetailsPage, { presentation: ev });
   }
-  makeItFavorite(ev){
+  makeItFavorite(ev) {
     //TODO
-    console.log(ev, " was marked az favorite");
+    if (this.user.isFavorite(ev)) {
+      this.user.removeFavorite(ev);
+    }
+    else {
+      this.user.addFavorite(ev);
+    }
   }
 }

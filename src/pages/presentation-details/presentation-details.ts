@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { UserProvider } from '../../providers/user/user';
 /**
  * Generated class for the PresentationDetailsPage page.
  *
@@ -17,16 +18,24 @@ export class PresentationDetailsPage {
   presentation: any;
   question: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public user: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.presentation = this.navParams.data.presentation;
   }
 
   makeItFavorite(){
-    console.log(this.presentation.id, " was marked as favorite");
+    if (this.user.isFavorite(this.presentation.id)) {
+      this.user.removeFavorite(this.presentation.id);
+    }
+    else {
+      this.user.addFavorite(this.presentation.id);
+    }
   }
 
   sendQuestion(){
     //TODO
     console.log("question was sent", this.question);
+  }
+  isFavorite():string{
+    return this.user.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
   }
 }

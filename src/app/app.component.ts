@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { PresentationProvider } from '../providers/presentation/presentation';
+import { UserProvider } from '../providers/user/user';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,7 +14,7 @@ import { PresentationProvider } from '../providers/presentation/presentation';
 export class MyApp {
   rootPage:any = TabsPage;
 
-  constructor(presData: PresentationProvider, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(userData: UserProvider, presData: PresentationProvider, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

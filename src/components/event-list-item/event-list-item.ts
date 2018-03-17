@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import { UserProvider } from '../../providers/user/user';
 /**
  * Generated class for the EventListItemComponent component.
  *
@@ -16,7 +17,7 @@ export class EventListItemComponent {
   @Output() openPresentation = new EventEmitter();
   @Output() makeItFavorite = new EventEmitter();
 
-  constructor() {
+  constructor(public user: UserProvider) {
   }
   formattedTime():string {
     const times = this.presentation.time.split('-');
@@ -30,5 +31,8 @@ export class EventListItemComponent {
   }
   favoriteClicked(){
     this.makeItFavorite.emit(this.presentation.id);
+  }
+  isFavorite():string{
+    return this.user.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
   }
 }
