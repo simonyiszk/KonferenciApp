@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the EventListItemComponent component.
@@ -13,15 +13,22 @@ import { Component, Input } from '@angular/core';
 export class EventListItemComponent {
 
   @Input('presentation') presentation: any;
+  @Output() openPresentation = new EventEmitter();
+  @Output() makeItFavorite = new EventEmitter();
 
   constructor() {
   }
   formattedTime():string {
     const times = this.presentation.time.split('-');
-    console.log(times);
     return (
       `<div>${times[0]}</div>
       <div>${times[1]}</div>`
     )
+  }
+  presentationClicked(){
+    this.openPresentation.emit(this.presentation);
+  }
+  favoriteClicked(){
+    this.makeItFavorite.emit(this.presentation.id);
   }
 }

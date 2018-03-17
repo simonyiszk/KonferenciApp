@@ -19,6 +19,6 @@
     </ion-segment-button>
   </ion-segment>
   <div *ngFor="let pres of (data ? data : [])">
-    <event-list-item [presentation]="pres"></event-list-item>
+    <event-list-item [presentation]="pres" (openPresentation)="openPresentation($event)" (makeItFavorite)="makeItFavorite($event)"></event-list-item>
   </div>
 </ion-content>

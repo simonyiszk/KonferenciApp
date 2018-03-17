@@ -4,5 +4,19 @@ event-list-item {
         color: white;
         border: 1px solid black;
         margin: 1rem;
+        justify-content: space-between;
+        > div {
+            flex-grow: 1;
+        }
+    }
+
+    .timeDiv {
+         
+    }
+    .textDiv {
+        
+    }
+    .heartDiv {
+        
     }
 }

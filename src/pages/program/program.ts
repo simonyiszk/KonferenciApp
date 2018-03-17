@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { PresentationDetailsPage } from '../presentation-details/presentation-details';
+
 import { PresentationProvider } from '../../providers/presentation/presentation';
 
 @Component({
@@ -25,4 +27,11 @@ export class ProgramPage {
     });
   }
 
+  openPresentation(ev){
+    this.navCtrl.push(PresentationDetailsPage, { presentation: ev });
+  }
+  makeItFavorite(ev){
+    //TODO
+    console.log(ev, " was marked az favorite");
+  }
 }

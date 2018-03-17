@@ -1,12 +1,12 @@
 <!-- Generated template for the EventListItemComponent component -->
 <div class="container">
-  <div [innerHTML]=formattedTime()>
+  <div class="timeDiv" (click)="presentationClicked()" [innerHTML]=formattedTime()>
   </div>
-  <div>
+  <div class="textDiv" (click)="presentationClicked()">
     <div>{{presentation.title}}</div>
     <div>{{presentation.performer}}</div>
   </div>
-  <div>
+  <div class="heartDiv" (click)="favoriteClicked()">
     <ion-icon name="heart"></ion-icon>
   </div>
 </div>
