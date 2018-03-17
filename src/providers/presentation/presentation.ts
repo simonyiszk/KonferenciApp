@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
+
+import { UserProvider } from '../user/user';
 /*
   Generated class for the PresentationProvider provider.
 
@@ -14,7 +16,7 @@ import 'rxjs/add/observable/of';
 export class PresentationProvider {
   data: any;
 
-  constructor(public http: Http) {
+  constructor(public user: UserProvider, public http: Http) {
     
   }
 
@@ -38,8 +40,12 @@ export class PresentationProvider {
   filterPresentation(segment: string) {
     return this.load().map((data: any) => {
       if(segment === 'favorite'){
-        //TODO
-        return data["IB028"];
+        return Object.keys(data).reduce((accumulator, currentValue) => {
+          return accumulator.concat(data[currentValue]);
+        }, [])
+        .filter((el) => {
+          return this.user.isFavorite(el.id);
+        }, this);
       }
       else {
         return data[segment];
