@@ -15,19 +15,24 @@
 
 <ion-content padding>
   <div *ngIf="!loggedIn">
-    <p>Lorem ipsum Patrik kurvajóarc consectetur adipiscing elit. Mauris sagittis congue venenatis. Suspendisse commodo orci
-      in magna tincidunt, vel fringilla velit mattis. Vivamus suscipit, mauris quis euismod luctus, erat nisl volutpat turpis,
+    <div class="logout-text">
+      Lorem ipsum Patrik kurvajóarc consectetur adipiscing elit. Mauris sagittis congue venenatis. Suspendisse commodo orci in
+      magna tincidunt, vel fringilla velit mattis. Vivamus suscipit, mauris quis euismod luctus, erat nisl volutpat turpis,
       nec
-    </p>
+    </div>
     <form (ngSubmit)="login()">
       <ion-item class="input-section">
-        <ion-textarea [(ngModel)]="email" name="email"></ion-textarea>
+        <ion-input [(ngModel)]="email" name="email"></ion-input>
       </ion-item>
       <button ion-button type="submit" block>Regisztrálok a játékra!</button>
     </form>
   </div>
   <div *ngIf="loggedIn">
-    Mutasd fel a QR-kódodat a standoknál!
-
+    <div class="login-text">
+      Mutasd fel a QR-kódodat a standoknál!
+    </div>
+    <div style="color:white; font-size: 5rem;border:2px solid white;">
+      EZ EGY QR-KÓD, CSAK NAGYON CSÚNYA
+    </div>
   </div>
 </ion-content>
