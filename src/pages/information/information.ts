@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, HostListener } from '@angular/core';
+import { NavController, Platform } from 'ionic-angular';
 
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -10,21 +10,19 @@ import 'rxjs/add/operator/map';
 })
 export class InformationPage {
 
-  data: any = [];
+  data: any = {};
 
-  constructor(public http: Http, public navCtrl: NavController) {
+  constructor(public http: Http, public platform: Platform, public navCtrl: NavController) {
     this.loadData();
   }
 
-  loadData(){
-    //this.file.readAsText(this.file.applicationDirectory + "www/assets", "data.json").then(...)
-    this.http.get('../../assets/data/organizers.json')
-    .map(res => res.json())
-    .subscribe(data => {
-      this.data = data;
-      //console.log(data);
-    });
-    /** TODO: Add img key */
+  loadData() {
+    this.http.get('../../assets/data/information.json')
+      .map(res => res.json())
+      .subscribe(data => {
+        this.data = data;
+        console.log(data);
+      });
     /*this.data = JSON.parse(`[  
       {  
          "name":"Tóth Bence",
@@ -45,6 +43,25 @@ export class InformationPage {
          "phone":"+36 ‭70 413 5912"
       }
    ]`);*/
-   //console.log(this.data);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.resizeCircle(event.target.innerWidth);
+  }
+
+  ionViewDidLoad() {
+    this.resizeCircle(this.platform.width());
+  }
+
+  resizeCircle(width: number) {
+    //(w/2)^2/10 + 2,5 = r
+    const platWidth = width / 10;
+    const h = (platWidth * platWidth / 40 + 2.5);
+    const rStr = h + "rem";
+    document.getElementById("svgcircle").setAttribute('r', rStr);
+
+    const yStr = (h + 50) + "rem";
+    document.getElementById("svgcircle").setAttribute('cy', yStr);
   }
 }

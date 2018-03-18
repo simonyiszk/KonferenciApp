@@ -1,6 +1,7 @@
 page-information {
-    .white-background {
-        background-color: white;
+    .content-bg {
+        background: white;
+        position: relative;
     }
     .section-white {
         color: white;
@@ -28,7 +29,7 @@ page-information {
         height: 3rem;
     }
     svg {
-        background-color:color($colors, bgcolor);
+        @extend .content;
         position: absolute;
         top:0;
         left:0;

@@ -1,0 +1,59 @@
+{
+    "organizers": [
+        {
+            "name": "Tóth Bence",
+            "title": "Főrendező",
+            "email": "toth.bence@simonyi.bme.hu",
+            "phone": "+36 30 961 5767",
+            "img": "/assets/imgs/organizers/toth-bence.jpg"
+        },
+        {
+            "name": "Kiss Dávid",
+            "title": "Simonyi Károly Szakkollégium, Elnök",
+            "email": "kiss.david@simonyi.bme.hu",
+            "phone": "+36 30 647 2610",
+            "img": "/assets/imgs/organizers/kiss-david.jpg"
+        },
+        {
+            "name": "Vegera Tamás",
+            "title": "Sajtófelelős",
+            "email": "vegera.tamas@simonyi.bme.hu",
+            "phone": "+36 ‭70 413 5912",
+            "img": "/assets/imgs/organizers/vegera-tamas.jpg"
+        }
+    ],
+    "mainsup": {
+        "name": "schdesign",
+        "link": "https://konferencia.simonyi.bme.hu",
+        "img": "/assets/imgs/supporters/sds.svg"
+    },
+    "accentuatedsup": [
+        {
+            "name": "schdesign",
+            "link": "https://konferencia.simonyi.bme.hu",
+            "img": "/assets/imgs/supporters/sds.svg"
+        },
+        {
+            "name": "schdesign",
+            "link": "https://konferencia.simonyi.bme.hu",
+            "img": "/assets/imgs/supporters/sds.svg"
+        }
+    ],
+    "othersup": [
+        {
+            "name": "schdesign",
+            "link": "https://konferencia.simonyi.bme.hu",
+            "img": "/assets/imgs/supporters/sds.svg"
+        },
+        {
+            "name": "schdesign",
+            "link": "https://konferencia.simonyi.bme.hu",
+            "img": "/assets/imgs/supporters/sds.svg"
+        },
+        {
+            "name": "schdesign",
+            "link": "https://konferencia.simonyi.bme.hu",
+            "img": "/assets/imgs/supporters/sds.svg"
+        }
+    ]
+}
