@@ -45,34 +45,33 @@ $colors: (
 );
 
 $toolbar-background: color($colors, header);
+$toolbar-title-font-size: 2.5rem;
 $tabs-background: color($colors, header);
 $tabs-tab-color-active: #fff;
-$tabs-ios-tab-color-inactive: color($colors, inactive-tab);
-$tabs-md-tab-color-inactive: color($colors, inactive-tab);
-$tabs-wp-tab-color-inactive: color($colors, inactive-tab);
-$background-color: color($colors, bgcolor);
+$tabs-tab-color-inactive: color($colors, inactive-tab);
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
 
 //$toolbar-ios-title-text-align: center;
-
-
+$toolbar-ios-title-font-size: $toolbar-title-font-size;
+$tabs-ios-tab-color-inactive: $tabs-tab-color-inactive;
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
 //$toolbar-md-title-text-align: center;
-
-
+$toolbar-md-title-font-size: $toolbar-title-font-size;
+$tabs-md-tab-color-inactive: $tabs-tab-color-inactive;
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
 //$toolbar-wp-title-text-align: center;
-
-
+$toolbar-wp-title-font-size: $toolbar-title-font-size;
+$tabs-wp-tab-color-inactive: $tabs-tab-color-inactive;
 // App Theme
 // --------------------------------------------------
 // Ionic apps can have different themes applied, which can
