@@ -2,30 +2,54 @@ page-presentation-details {
     .outer-container{
         display: flex;
         flex-direction: column;
+        color: white;
     }
     .details-section{
         display: flex;
         > img {
             width: 10rem;
             height: 10rem;
+            border: 2px solid white;
+            margin: 0 1rem 1rem 0;
         }
-        .details-name{
-
-        }
-        .details-titulus{
-
+        .details-performer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .details-name{
+                font-size: 2.5rem;
+            }
+            .details-titulus{
+                font-size: 1.5rem;    
+            }
         }
     }
     .title-section{
-        display: flex
+        display: flex;
+        justify-content: space-between;
+        font-size: 3rem;
+        ion-icon {
+            font-size: 5rem;
+        }
     }
     .desc-section{
-
+        color: #efefef;
     }
     .text-section{
-
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
     .input-section{
         background-color: white;
+        &, *{
+            padding: 0 !important;
+        }
+    }
+    .send-button{
+        color: white;
+        font-weight: bold;
+        border: 3px solid white;
+        height: 5rem;
+        background-color: transparent;
     }
 }

@@ -16,10 +16,10 @@
 <ion-content padding>
   <div class="outer-container">
     <div class="details-section">
-      <img src="../../assets/imgs/logo.png" />
-      <div>
-        <p class="details-name">{{presentation.performer}}</p>
-        <p class="details-titulus">{{presentation.titulus}}</p>
+      <img [src]="presentation.picture" />
+      <div class="details-performer">
+        <div class="details-name">{{presentation.performer}}</div>
+        <div class="details-titulus">{{presentation.titulus}}</div>
       </div>
     </div>
     <div class="title-section">
@@ -34,9 +34,9 @@
     </div>
     <form (ngSubmit)="sendQuestion()">
       <ion-item class="input-section">
-        <ion-textarea [(ngModel)]="question" name="question"></ion-textarea>
+        <ion-textarea [(ngModel)]="question" name="question" rows="5"></ion-textarea>
       </ion-item>
-      <button ion-button type="submit" block>Küldés</button>
+      <button ion-button type="submit" block class="send-button">Küldés</button>
     </form>
   </div>
 </ion-content>
