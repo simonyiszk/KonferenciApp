@@ -3,10 +3,10 @@
   <div class="timeDiv" (click)="presentationClicked()" [innerHTML]=formattedTime()>
   </div>
   <div class="textDiv" (click)="presentationClicked()">
-    <div>{{presentation.title}}</div>
-    <div>{{presentation.performer}}</div>
+    <div class="titleDiv">{{presentation.title}}</div>
+    <div class="performerDiv">{{presentation.performer}}</div>
   </div>
-  <div class="heartDiv" (click)="favoriteClicked()">
+  <div *ngIf="presentation.break != 1" class="heartDiv" (click)="favoriteClicked()">
     <ion-icon name="{{isFavorite()}}"></ion-icon>
   </div>
 </div>

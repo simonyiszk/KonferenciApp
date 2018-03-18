@@ -21,10 +21,9 @@ export class ProgramPage {
   }
 
   change() {
-    console.log("CHANGED");
     this.presData.filterPresentation(this.events).subscribe((data: any) => {
       this.data = data;
-      console.log(this.data);
+      //console.log(this.data);
     });
   }
 
