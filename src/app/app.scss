@@ -15,6 +15,23 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
 $SIDEMENU_TOP: #25255c;
 $SIDEMENU_BOTTOM: #771215;
 

@@ -1,11 +1,33 @@
 page-home {
-    ion-grid {
+    .main-container {
+        display: flex;
+        flex-direction: column;
         height: 100%;
-        ion-row {
-            height: 33.33%;
-          }
+        justify-content: space-between;
+        padding: 1rem 0;
+        > div {
+            height: 25%;
+            min-height: 15rem;
+            
+        }
     }
-    img {
-        height: 100%;
+    .img-container {
+        img {
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .top-container {
+        display: flex;
+        justify-content: space-between;
+        min-width: 30rem;
+        > div {
+            width: 45%;
+            
+        }
+    }
+    .bot-container {
+        min-width: 30rem;
     }
 }

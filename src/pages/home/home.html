@@ -7,24 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid justify-content-between>
-    <ion-row>
-      <ion-col>
-        <img src="../../assets/imgs/konf.svg" />
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
+  <div class="main-container">
+    <div class="img-container">
+      <img src="../../assets/imgs/konf.svg" />
+    </div>
+    <div class="top-container">
+      <div>
         <main-button title="Kedvenc előadások" icon="heart" (click)="favorite()"></main-button>
-      </ion-col>
-      <ion-col>
+      </div>
+      <div>
         <main-button title="Helyszín" icon="pin" (click)="location()"></main-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <main-button title="Nyereményjáték" icon="cube" (click)="game()"></main-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      </div>
+    </div>
+
+    <div class="bot-container">
+      <main-button title="Nyereményjáték" icon="cube" (click)="game()"></main-button>
+    </div>
+  </div>
 </ion-content>
