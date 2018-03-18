@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 
+import { UserProvider } from '../../providers/user/user';
 /**
  * Generated class for the GamePage page.
  *
@@ -14,11 +15,25 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class GamePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  loggedIn: any;
+  email: string;
+
+  constructor(public user: UserProvider, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
+    this.loggedIn = user.loggedIn;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GamePage');
-  }
+  login() {
+    this.user.login(this.email).then(() => {
+      //ITS SO UGLY
+      this.navCtrl.pop();
+      this.navCtrl.push(GamePage);
+      let toast = this.toastCtrl.create({
+        message: 'Sikeresen regisztráltál a játékra',
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+    });
 
+  }
 }

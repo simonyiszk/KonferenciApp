@@ -7,12 +7,27 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Game</ion-title>
+    <ion-title>Nyereményjáték</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div *ngIf="!loggedIn">
+    <p>Lorem ipsum Patrik kurvajóarc consectetur adipiscing elit. Mauris sagittis congue venenatis. Suspendisse commodo orci
+      in magna tincidunt, vel fringilla velit mattis. Vivamus suscipit, mauris quis euismod luctus, erat nisl volutpat turpis,
+      nec
+    </p>
+    <form (ngSubmit)="login()">
+      <ion-item class="input-section">
+        <ion-textarea [(ngModel)]="email" name="email"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>Regisztrálok a játékra!</button>
+    </form>
+  </div>
+  <div *ngIf="loggedIn">
+    Mutasd fel a QR-kódodat a standoknál!
 
+  </div>
 </ion-content>
