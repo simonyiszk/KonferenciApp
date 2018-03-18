@@ -24,7 +24,7 @@ export class PresentationProvider {
     if (this.data) {
       return Observable.of(this.data);
     } else {
-    return this.http.get('../../assets/data/presentations.json')
+    return this.http.get('http://gyromouse.net/weboldal/konferenciapi/timetable.php')
       .map(this.processData, this);
     }
   }
