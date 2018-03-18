@@ -11,40 +11,48 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class UserProvider {
 
-  loggedIn: any;
+  loggedIn: boolean;
+  username: string;
   favorites: number[] = [];
 
   constructor(public http: Http, public storage: Storage) {
-    this.storage.get("logged").then((value) => {
-      //this.loggedIn = value ? value : 0; UNTIL LOGING IS NOT WORKING
-      this.loggedIn = 1;
+    this.storage.get("userLogin").then((value) => {
+      this.loggedIn = !!value; //UNTIL LOGING IS NOT WORKING
+      //this.loggedIn = true;
     })
-    .then(() => {
-      if(this.loggedIn){
-        this.storage.get("username").then((value) => {
-          this.favorites = value;
-        });
-      }
-    });
+      .then(() => {
+        if (this.loggedIn) {
+          this.storage.get("favorites").then((value) => {
+            this.favorites = value ? value : [];
+          });
+        }
+      });
   }
 
-  addFavorite(id:number){
-    this.storage.set("username", [...this.favorites, id]).then(() => {
+  login(email: string): Promise<any> {
+    //TODO: VALIDATE
+    return this.storage.set("userLogin", email).then(() => {
+      this.loggedIn = true;
+      this.username = email;
+    });
+  }
+  addFavorite(id: number) {
+    this.storage.set("favorites", [...this.favorites, id]).then(() => {
       this.favorites.push(id);
     });
   }
-  removeFavorite(id:number){
+  removeFavorite(id: number) {
     let tmp = [...this.favorites];
     var index = tmp.indexOf(id);
     while (index !== -1) {
       tmp.splice(index, 1);
       index = tmp.indexOf(id);
     }
-    this.storage.set("username", tmp).then(() => {
+    this.storage.set("favorites", tmp).then(() => {
       this.favorites = tmp;
     });
   }
-  isFavorite(id:number){
-    return this.favorites.indexOf(id)>-1;
+  isFavorite(id: number) {
+    return this.favorites.indexOf(id) > -1;
   }
 }
