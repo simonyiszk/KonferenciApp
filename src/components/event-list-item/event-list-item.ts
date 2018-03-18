@@ -27,10 +27,12 @@ export class EventListItemComponent {
     )
   }
   presentationClicked(){
-    this.openPresentation.emit(this.presentation);
+    if(this.presentation.break != 1)
+      this.openPresentation.emit(this.presentation);
   }
   favoriteClicked(){
-    this.makeItFavorite.emit(this.presentation.id);
+    if(this.presentation.break != 1)
+      this.makeItFavorite.emit(this.presentation.id);
   }
   isFavorite():string{
     return this.user.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
