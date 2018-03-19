@@ -1,6 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
 /*
   Generated class for the InformationProvider provider.
 
@@ -10,8 +13,18 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class InformationProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello InformationProvider Provider');
+  data: any;
+
+  constructor(public http: Http) {
+
   }
 
+  load(): any {
+    if (this.data) {
+      return Observable.of(this.data);
+    } else {
+      return this.http.get('../../assets/data/information.json')
+        .map(res => res.json());
+    }
+  }
 }

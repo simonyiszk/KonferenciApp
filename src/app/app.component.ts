@@ -7,6 +7,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { PresentationProvider } from '../providers/presentation/presentation';
 import { UserProvider } from '../providers/user/user';
+import { InformationProvider } from '../providers/information/information';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,7 +15,7 @@ import { UserProvider } from '../providers/user/user';
 export class MyApp {
   rootPage:any = TabsPage;
 
-  constructor(userData: UserProvider, presData: PresentationProvider, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(infoData: InformationProvider, userData: UserProvider, presData: PresentationProvider, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -22,5 +23,6 @@ export class MyApp {
       splashScreen.hide();
     });
     presData.load();
+    infoData.load();
   }
 }
