@@ -32,14 +32,14 @@ body {
 }
 
 
-$SIDEMENU_TOP: #25255c;
-$SIDEMENU_BOTTOM: #771215;
+$SIDEMENU_TOP: #771215;
+$SIDEMENU_BOTTOM: #581D3A;
 
 .content {
-    background: -webkit-gradient(bottom, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
-    background: -o-linear-gradient(bottom, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
-    background: -moz-linear-gradient(bottom, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
-    background: linear-gradient(to bottom, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -webkit-gradient(230deg, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -o-linear-gradient(230deg, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -moz-linear-gradient(230deg, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: linear-gradient(230deg, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
 }
 
 .back-button {

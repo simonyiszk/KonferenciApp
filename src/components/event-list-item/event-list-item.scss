@@ -13,7 +13,7 @@ event-list-item {
          padding: 1rem;
          display: flex;
          flex-direction: column;
-         justify-content: space-around;
+         justify-content: center;
     }
     .textDiv {
         flex-grow: 1;
@@ -25,15 +25,16 @@ event-list-item {
     }
     .titleDiv {
         font-size: 2rem;
-        margin-bottom: 1rem;
     }
     .performerDiv {
-
+        margin-top: 1rem;
     }
     .heartDiv {
-        padding: 1rem;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
         ion-icon {
-            font-size: 5rem;
+            font-size: 4rem;
         }
     }
 }
