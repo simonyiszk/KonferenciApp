@@ -36,19 +36,19 @@ export class UserProvider {
       this.username = email;
     });
   }
-  addFavorite(id: number) {
-    this.storage.set("favorites", [...this.favorites, id]).then(() => {
+  addFavorite(id: number): Promise<any> {
+    return this.storage.set("favorites", [...this.favorites, id]).then(() => {
       this.favorites.push(id);
     });
   }
-  removeFavorite(id: number) {
+  removeFavorite(id: number): Promise<any> {
     let tmp = [...this.favorites];
     var index = tmp.indexOf(id);
     while (index !== -1) {
       tmp.splice(index, 1);
       index = tmp.indexOf(id);
     }
-    this.storage.set("favorites", tmp).then(() => {
+    return this.storage.set("favorites", tmp).then(() => {
       this.favorites = tmp;
     });
   }

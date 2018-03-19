@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 import { PresentationDetailsPage } from '../presentation-details/presentation-details';
 
@@ -15,7 +15,12 @@ export class ProgramPage {
   data: any;
   events: string;
 
-  constructor(public user: UserProvider, public presData: PresentationProvider, public navCtrl: NavController) {
+  constructor(
+    public user: UserProvider,
+    public presData: PresentationProvider,
+    public alertCtrl: AlertController,
+    public navCtrl: NavController
+  ) {
     this.events = 'IB025';
     this.change();
   }
@@ -23,7 +28,7 @@ export class ProgramPage {
   change() {
     this.presData.filterPresentation(this.events).subscribe((data: any) => {
       this.data = data;
-      //console.log(this.data);
+      console.log(this.data);
     });
   }
 
@@ -33,7 +38,29 @@ export class ProgramPage {
   makeItFavorite(ev) {
     //TODO
     if (this.user.isFavorite(ev)) {
-      this.user.removeFavorite(ev);
+
+      let alert = this.alertCtrl.create({
+        title: "Kedvenc törlése",
+        message: 'Biztosan el szeretnéd távolítani a kedvenceid közül?',
+        buttons: [
+          {
+            text: 'Mégsem',
+            handler: () => {
+            }
+          },
+          {
+            text: 'Törlés',
+            handler: () => {
+              this.user.removeFavorite(ev).then(() => {
+                if (this.events === 'favorite') {
+                  this.change();
+                }
+              });
+            }
+          }
+        ]
+      });
+      alert.present();
     }
     else {
       this.user.addFavorite(ev);
