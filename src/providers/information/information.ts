@@ -19,7 +19,7 @@ export class InformationProvider {
 
   }
 
-  load(): any {
+  get(): any {
     if (this.data) {
       return Observable.of(this.data);
     } else {

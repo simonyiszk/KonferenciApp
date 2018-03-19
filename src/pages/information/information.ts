@@ -12,7 +12,7 @@ export class InformationPage {
   data: any = {};
 
   constructor(public infoData: InformationProvider, public platform: Platform, public navCtrl: NavController) {
-    infoData.load().subscribe(data => {
+    infoData.get().subscribe(data => {
       this.data = data;
       console.log(data);
     });

@@ -20,7 +20,7 @@ export class PresentationProvider {
     
   }
 
-  load(): any {
+  get(): any {
     if (this.data) {
       return Observable.of(this.data);
     } else {
@@ -38,7 +38,7 @@ export class PresentationProvider {
   }
 
   filterPresentation(segment: string) {
-    return this.load().map((data: any) => {
+    return this.get().map((data: any) => {
       if(segment === 'favorite'){
         return Object.keys(data).reduce((accumulator, currentValue) => {
           return accumulator.concat(data[currentValue]);

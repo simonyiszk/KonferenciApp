@@ -22,7 +22,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    presData.load();
-    infoData.load();
+    presData.get();
+    infoData.get();
   }
 }
