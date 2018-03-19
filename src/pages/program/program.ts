@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, Refresher } from 'ionic-angular';
 
 import { PresentationDetailsPage } from '../presentation-details/presentation-details';
 
@@ -36,7 +36,6 @@ export class ProgramPage {
     this.navCtrl.push(PresentationDetailsPage, { presentation: ev });
   }
   makeItFavorite(ev) {
-    //TODO
     if (this.user.isFavorite(ev)) {
 
       let alert = this.alertCtrl.create({
@@ -65,5 +64,11 @@ export class ProgramPage {
     else {
       this.user.addFavorite(ev);
     }
+  }
+  doRefresh(refresher: Refresher) {
+    this.presData.load().subscribe((data: any) => {
+      refresher.complete();
+      this.change();
+    });
   }
 }
