@@ -16,7 +16,7 @@ export class ProgramPage {
   events: string;
 
   constructor(
-    public user: UserProvider,
+    public userData: UserProvider,
     public presData: PresentationProvider,
     public alertCtrl: AlertController,
     public navCtrl: NavController
@@ -36,7 +36,7 @@ export class ProgramPage {
     this.navCtrl.push(PresentationDetailsPage, { presentation: ev });
   }
   makeItFavorite(ev) {
-    if (this.user.isFavorite(ev)) {
+    if (this.userData.isFavorite(ev)) {
 
       let alert = this.alertCtrl.create({
         title: "Kedvenc törlése",
@@ -50,7 +50,7 @@ export class ProgramPage {
           {
             text: 'Törlés',
             handler: () => {
-              this.user.removeFavorite(ev).then(() => {
+              this.userData.removeFavorite(ev).then(() => {
                 if (this.events === 'favorite') {
                   this.change();
                 }
@@ -62,7 +62,7 @@ export class ProgramPage {
       alert.present();
     }
     else {
-      this.user.addFavorite(ev);
+      this.userData.addFavorite(ev);
     }
   }
   doRefresh(refresher: Refresher) {

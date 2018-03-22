@@ -18,12 +18,12 @@ export class GamePage {
   loggedIn: any;
   email: string;
 
-  constructor(public user: UserProvider, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
-    this.loggedIn = user.loggedIn;
+  constructor(public userData: UserProvider, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
+    this.loggedIn = userData.loggedIn;
   }
 
   login() {
-    this.user.login(this.email).then(() => {
+    this.userData.login(this.email).then(() => {
       //ITS SO UGLY
       this.navCtrl.pop();
       this.navCtrl.push(GamePage);

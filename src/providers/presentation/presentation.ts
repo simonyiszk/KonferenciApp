@@ -16,7 +16,7 @@ import { UserProvider } from '../user/user';
 export class PresentationProvider {
   data: any;
 
-  constructor(public user: UserProvider, public http: Http) {
+  constructor(public userData: UserProvider, public http: Http) {
     
   }
 
@@ -47,7 +47,7 @@ export class PresentationProvider {
           return accumulator.concat(data[currentValue]);
         }, [])
         .filter((el) => {
-          return this.user.isFavorite(el.id);
+          return this.userData.isFavorite(el.id);
         }, this);
       }
       else {

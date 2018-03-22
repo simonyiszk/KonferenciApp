@@ -17,7 +17,7 @@ export class EventListItemComponent {
   @Output() openPresentation = new EventEmitter();
   @Output() makeItFavorite = new EventEmitter();
 
-  constructor(public user: UserProvider) {
+  constructor(public userData: UserProvider) {
   }
   formattedTime():string {
     const times = this.presentation.time.split('-');
@@ -35,6 +35,6 @@ export class EventListItemComponent {
       this.makeItFavorite.emit(this.presentation.id);
   }
   isFavorite():string{
-    return this.user.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
+    return this.userData.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
   }
 }

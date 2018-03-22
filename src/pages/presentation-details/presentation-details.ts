@@ -18,16 +18,16 @@ export class PresentationDetailsPage {
   presentation: any;
   question: any;
 
-  constructor(public user: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public userData: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.presentation = this.navParams.data.presentation;
   }
 
   makeItFavorite(){
-    if (this.user.isFavorite(this.presentation.id)) {
-      this.user.removeFavorite(this.presentation.id);
+    if (this.userData.isFavorite(this.presentation.id)) {
+      this.userData.removeFavorite(this.presentation.id);
     }
     else {
-      this.user.addFavorite(this.presentation.id);
+      this.userData.addFavorite(this.presentation.id);
     }
   }
 
@@ -36,6 +36,6 @@ export class PresentationDetailsPage {
     console.log("question was sent", this.question);
   }
   isFavorite():string{
-    return this.user.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
+    return this.userData.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
   }
 }
