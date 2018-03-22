@@ -1,5 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
 
 /*
   Generated class for the ExpoProvider provider.
@@ -9,9 +13,20 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ExpoProvider {
+  data: any;
 
-  constructor(public http: HttpClient) {
-    console.log('Hello ExpoProvider Provider');
+  constructor(public http: Http) {
+
   }
-
+  get(): any {
+    if (this.data) {
+      return Observable.of(this.data);
+    } else {
+      return this.load();
+    }
+  }
+  load(): any {
+    return this.http.get('http://gyromouse.net/weboldal/konferenciapi/stand.php')
+      .map(res => res.json());
+  }
 }
