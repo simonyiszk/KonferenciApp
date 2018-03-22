@@ -21,6 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PresentationProvider } from '../providers/presentation/presentation';
 import { UserProvider } from '../providers/user/user';
 import { InformationProvider } from '../providers/information/information';
+import { ExpoProvider } from '../providers/expo/expo';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { InformationProvider } from '../providers/information/information';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PresentationProvider,
     UserProvider,
-    InformationProvider
+    InformationProvider,
+    ExpoProvider
   ]
 })
 export class AppModule {}
