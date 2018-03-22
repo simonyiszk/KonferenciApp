@@ -4,23 +4,26 @@ import { NavController } from 'ionic-angular';
 import { LocationPage } from '../location/location';
 import { GamePage } from '../game/game';
 
+import { UserProvider } from '../../providers/user/user';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public userData: UserProvider, public navCtrl: NavController) {
 
   }
 
-  favorite(){
+  favorite() {
+    this.userData.currentPage="favorite";
     this.navCtrl.parent.select(1);
   }
-  location(){
+  location() {
     this.navCtrl.push(LocationPage);
   }
-  game(){
+  game() {
     this.navCtrl.push(GamePage);
   }
 

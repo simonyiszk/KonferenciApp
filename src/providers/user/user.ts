@@ -14,11 +14,11 @@ export class UserProvider {
   loggedIn: boolean;
   username: string;
   favorites: number[] = [];
+  currentPage = "IB025";
 
   constructor(public http: Http, public storage: Storage) {
     this.storage.get("userLogin").then((value) => {
-      this.loggedIn = !!value; //UNTIL LOGING IS NOT WORKING
-      //this.loggedIn = true;
+      this.loggedIn = !!value;
     })
       .then(() => {
         if (this.loggedIn) {

@@ -13,7 +13,6 @@ import { UserProvider } from '../../providers/user/user';
 export class ProgramPage {
 
   data: any;
-  events: string;
 
   constructor(
     public userData: UserProvider,
@@ -21,15 +20,15 @@ export class ProgramPage {
     public alertCtrl: AlertController,
     public navCtrl: NavController
   ) {
-    this.events = 'IB025';
     this.change();
   }
 
   change() {
-    this.presData.filterPresentation(this.events).subscribe((data: any) => {
+    this.presData.filterPresentation(this.userData.currentPage).subscribe((data: any) => {
       this.data = data;
       console.log(this.data);
     });
+    console.log(this.userData.currentPage);
   }
 
   openPresentation(ev) {
@@ -51,7 +50,7 @@ export class ProgramPage {
             text: 'Törlés',
             handler: () => {
               this.userData.removeFavorite(ev).then(() => {
-                if (this.events === 'favorite') {
+                if (this.userData.currentPage === 'favorite') {
                   this.change();
                 }
               });
