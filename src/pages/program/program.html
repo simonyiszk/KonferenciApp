@@ -5,27 +5,27 @@
     </ion-title>
   </ion-navbar>
   <ion-segment [(ngModel)]="userData.currentPage" color="light" (ionChange)="change()">
-      <ion-segment-button value="IB025">
-        IB025
-      </ion-segment-button>
-      <ion-segment-button value="favorite">
-        <ion-icon name="heart"></ion-icon>
-      </ion-segment-button>
-      <ion-segment-button value="IB028">
-        IB028
-      </ion-segment-button>
-    </ion-segment>
+    <ion-segment-button value="IB025">
+      IB025
+    </ion-segment-button>
+    <ion-segment-button value="favorite">
+      <ion-icon name="heart"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="IB028">
+      IB028
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
 <ion-content padding>
-    <ion-refresher [pullMin]=30 [pullMax]=80 (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content
-          pullingIcon="arrow-dropdown"
-          refreshingSpinner="bubbles">
-        </ion-refresher-content>
-      </ion-refresher>
-  
-  <div *ngFor="let pres of (data ? data : [])">
-    <event-list-item [presentation]="pres" (openPresentation)="openPresentation($event)" (makeItFavorite)="makeItFavorite($event)"></event-list-item>
+  <ion-refresher [pullMin]=30 [pullMax]=80 (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="bubbles">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="swipe-content" (swipe)="swipeEvent($event)">
+    <div *ngFor="let pres of (data ? data : [])">
+      <event-list-item [presentation]="pres" (openPresentation)="openPresentation($event)" (makeItFavorite)="makeItFavorite($event)"></event-list-item>
+    </div>
   </div>
 </ion-content>
