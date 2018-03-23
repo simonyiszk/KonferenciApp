@@ -5,19 +5,22 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
-import { ProgramPage } from '../pages/program/program';
-import { ExpoPage } from '../pages/expo/expo';
-import { InformationPage } from '../pages/information/information';
-import { TabsPage } from '../pages/tabs/tabs';
 import { LocationPage } from '../pages/location/location';
 import { GamePage } from '../pages/game/game';
+import { ProgramPage } from '../pages/program/program';
 import { PresentationDetailsPage } from '../pages/presentation-details/presentation-details';
+import { ExpoPage } from '../pages/expo/expo';
+import { ExpoDetailsPage } from '../pages/expo-details/expo-details';
+import { InformationPage } from '../pages/information/information';
+import { TabsPage } from '../pages/tabs/tabs';
+
 
 import { ComponentsModule } from '../components/components.module';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { PresentationProvider } from '../providers/presentation/presentation';
 import { UserProvider } from '../providers/user/user';
 import { InformationProvider } from '../providers/information/information';
@@ -33,7 +36,8 @@ import { ExpoProvider } from '../providers/expo/expo';
     TabsPage,
     LocationPage,
     GamePage,
-    PresentationDetailsPage
+    PresentationDetailsPage,
+    ExpoDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ import { ExpoProvider } from '../providers/expo/expo';
     TabsPage,
     LocationPage,
     GamePage,
-    PresentationDetailsPage
+    PresentationDetailsPage,
+    ExpoDetailsPage
   ],
   providers: [
     StatusBar,
