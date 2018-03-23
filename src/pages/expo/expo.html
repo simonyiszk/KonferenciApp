@@ -7,5 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-
+  <div *ngFor="let expo of (data ? data : [])">
+    <expo-list-item [expo]="expo" (openExpo)="openExpo($event)"></expo-list-item>
+  </div>
 </ion-content>
