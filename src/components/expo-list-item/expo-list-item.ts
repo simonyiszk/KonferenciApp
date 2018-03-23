@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the ExpoListItemComponent component.
@@ -12,11 +12,13 @@ import { Component } from '@angular/core';
 })
 export class ExpoListItemComponent {
 
-  text: string;
+  @Input('expo') expo: any;
+  @Output() openExpo = new EventEmitter();
 
   constructor() {
-    console.log('Hello ExpoListItemComponent Component');
-    this.text = 'Hello World';
   }
 
+  expoClicked(){
+    this.openExpo.emit(this.expo);
+  }
 }
