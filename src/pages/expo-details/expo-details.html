@@ -6,13 +6,21 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>ExpoDetails</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar>
+      <ion-title>Expo</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <div class="container">
+      <img [src]="expo.src" />
+      <div class="name-section">
+        {{expo.name}}
+      </div>
+      <div class="desc-section">
+        {{expo.description}}
+      </div>
+    </div>
+  </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the ExpoDetailsPage page.
@@ -8,18 +8,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-expo-details',
   templateUrl: 'expo-details.html',
 })
 export class ExpoDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  expo: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ExpoDetailsPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.expo = this.navParams.data.expo;
   }
 
 }
