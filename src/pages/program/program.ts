@@ -30,32 +30,34 @@ export class ProgramPage {
     });
     console.log(this.userData.currentPage);
   }
-  swipeTo(page){
+  swipeTo(page) {
     console.log(page);
     this.userData.currentPage = page;
     this.change();
   }
   swipeEvent(ev) {
-    switch (this.userData.currentPage) {
-      case 'IB025':
-      console.log("ib025");
-        if (ev.direction == 2)
-          this.swipeTo("favorite");
-        break;
-      case 'favorite':
-      console.log("fav");
-        if (ev.direction == 2)
-          this.swipeTo("IB028");
-        else if (ev.direction == 4)
-          this.swipeTo("IB025");
-        break;
-      case 'IB028':
-      console.log("ib028");
-        if (ev.direction == 4)
-          this.swipeTo("favorite");
-        break;
-      default:
-        console.log('Something went wrong!');
+    if (ev.distance >= 150) {
+      switch (this.userData.currentPage) {
+        case 'IB025':
+          console.log("ib025");
+          if (ev.direction == 2)
+            this.swipeTo("favorite");
+          break;
+        case 'favorite':
+          console.log("fav");
+          if (ev.direction == 2)
+            this.swipeTo("IB028");
+          else if (ev.direction == 4)
+            this.swipeTo("IB025");
+          break;
+        case 'IB028':
+          console.log("ib028");
+          if (ev.direction == 4)
+            this.swipeTo("favorite");
+          break;
+        default:
+          console.log('Something went wrong!');
+      }
     }
   }
   openPresentation(ev) {
