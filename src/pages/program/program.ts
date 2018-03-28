@@ -65,29 +65,7 @@ export class ProgramPage {
   }
   makeItFavorite(ev) {
     if (this.userData.isFavorite(ev)) {
-
-      let alert = this.alertCtrl.create({
-        title: "Kedvenc törlése",
-        message: 'Biztosan el szeretnéd távolítani a kedvenceid közül?',
-        buttons: [
-          {
-            text: 'Mégsem',
-            handler: () => {
-            }
-          },
-          {
-            text: 'Törlés',
-            handler: () => {
-              this.userData.removeFavorite(ev).then(() => {
-                if (this.userData.currentPage === 'favorite') {
-                  this.change();
-                }
-              });
-            }
-          }
-        ]
-      });
-      alert.present();
+      this.userData.removeFavorite(ev)
     }
     else {
       this.userData.addFavorite(ev);
