@@ -1,6 +1,9 @@
 <!-- Generated template for the InfoProfileComponent component -->
 <div class="container" (click)="clicked(content.email)">
-  <img [src]="content.img" />
+  <div class="image">
+      <ion-img width="100%" height="100%" [src]="content.img"></ion-img>
+     
+  </div>
   <div class="details">
     <div>
       <p class="name">{{content.name}}</p>

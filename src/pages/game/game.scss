@@ -9,4 +9,17 @@ page-game {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
+    .input-section{
+        background-color: white;
+        &, *{
+            padding: 0 !important;
+        }
+    }
+    .send-button{
+        color: white;
+        font-weight: bold;
+        border: 3px solid white;
+        height: 5rem;
+        background-color: transparent;
+    }
 }
