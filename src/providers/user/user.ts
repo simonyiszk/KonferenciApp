@@ -12,16 +12,18 @@ import { Storage } from '@ionic/storage';
 export class UserProvider {
 
   loggedIn: boolean;
-  username: string;
+  username: string = "Guest";
   favorites: number[] = [];
   currentPage = "IB025";
 
   constructor(public http: Http, public storage: Storage) {
     this.storage.get("userLogin").then((value) => {
       this.loggedIn = !!value;
+      return value;
     })
-      .then(() => {
+      .then((value) => {
         if (this.loggedIn) {
+          this.username = value;
           this.storage.get("favorites").then((value) => {
             this.favorites = value ? value : [];
           });
