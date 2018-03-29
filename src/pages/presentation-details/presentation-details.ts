@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 
+import { PresentationProvider } from '../../providers/presentation/presentation';
 import { UserProvider } from '../../providers/user/user';
 /**
  * Generated class for the PresentationDetailsPage page.
@@ -18,11 +19,11 @@ export class PresentationDetailsPage {
   presentation: any;
   question: any;
 
-  constructor(public userData: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public userData: UserProvider, public presData: PresentationProvider, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
     this.presentation = this.navParams.data.presentation;
   }
 
-  makeItFavorite(){
+  makeItFavorite() {
     if (this.userData.isFavorite(this.presentation.id)) {
       this.userData.removeFavorite(this.presentation.id);
     }
@@ -31,11 +32,20 @@ export class PresentationDetailsPage {
     }
   }
 
-  sendQuestion(){
-    //TODO
-    console.log("question was sent", this.question);
+  sendQuestion() {
+    if (this.question) {
+      this.presData.sendQuestion(this.question).subscribe((data: any) => {
+        let toast = this.toastCtrl.create({
+          message: 'A kérdést elküldtük',
+          duration: 3000,
+          position: 'top'
+        });
+        toast.present();
+        this.question="";
+      });
+    }
   }
-  isFavorite():string{
+  isFavorite(): string {
     return this.userData.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
   }
 }

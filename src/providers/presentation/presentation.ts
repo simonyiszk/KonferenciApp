@@ -15,9 +15,9 @@ import { UserProvider } from '../user/user';
 @Injectable()
 export class PresentationProvider {
   data: any;
-
+  cnt: number;
   constructor(public userData: UserProvider, public http: Http) {
-    
+    this.cnt=0;
   }
 
   get(): any {
@@ -54,5 +54,10 @@ export class PresentationProvider {
         return data[segment];
       }
     });
+  }
+  sendQuestion(question: string){
+    const url = `http://gyromouse.net/weboldal/konferenciapi/question.php?pid=${this.cnt}&name=${this.userData.username}&question=${question}`;
+    this.cnt+=1;
+    return this.http.get(url);
   }
 }
