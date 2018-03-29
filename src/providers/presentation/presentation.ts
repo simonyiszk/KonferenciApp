@@ -17,17 +17,17 @@ export class PresentationProvider {
   data: any;
   cnt: number;
   constructor(public userData: UserProvider, public http: Http) {
-    this.cnt=0;
+    this.cnt = 0;
   }
 
   get(): any {
     if (this.data) {
       return Observable.of(this.data);
     } else {
-    return this.load();
+      return this.load();
     }
   }
-  load(): any{
+  load(): any {
     return this.http.get('http://gyromouse.net/weboldal/konferenciapi/timetable.php')
       .map(this.processData, this);
   }
@@ -42,22 +42,22 @@ export class PresentationProvider {
 
   filterPresentation(segment: string) {
     return this.get().map((data: any) => {
-      if(segment === 'favorite'){
+      if (segment === 'favorite') {
         return Object.keys(data).reduce((accumulator, currentValue) => {
           return accumulator.concat(data[currentValue]);
         }, [])
-        .filter((el) => {
-          return this.userData.isFavorite(el.id);
-        }, this);
+          .filter((el) => {
+            return this.userData.isFavorite(el.id);
+          }, this);
       }
       else {
         return data[segment];
       }
     });
   }
-  sendQuestion(question: string){
+  sendQuestion(question: string) {
     const url = `http://gyromouse.net/weboldal/konferenciapi/question.php?pid=${this.cnt}&name=${this.userData.username}&question=${question}`;
-    this.cnt+=1;
+    this.cnt += 1;
     return this.http.get(url);
   }
 }

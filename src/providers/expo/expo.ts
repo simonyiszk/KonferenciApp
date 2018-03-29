@@ -27,6 +27,9 @@ export class ExpoProvider {
   }
   load(): any {
     return this.http.get('http://gyromouse.net/weboldal/konferenciapi/stand.php')
-      .map(res => res.json());
+      .map((res) => {
+        this.data = res.json();
+        return this.data;
+      });
   }
 }

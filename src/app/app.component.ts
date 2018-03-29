@@ -38,8 +38,8 @@ export class MyApp {
         }
       });
     });
-    presData.get();
-    infoData.get();
-    expoData.get();
+    presData.get().subscribe();
+    infoData.get().subscribe();
+    expoData.get().subscribe();
   }
 }
