@@ -7,17 +7,13 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="main-container">
+  <div class="page-container">
     <div class="img-container">
       <img src="../../assets/imgs/konf.svg" />
     </div>
     <div class="top-container">
-      <div>
-        <main-button title="Kedvenc előadások" icon="heart" (click)="favorite()"></main-button>
-      </div>
-      <div>
-        <main-button title="{{text}}" icon="pin" (click)="location()"></main-button>
-      </div>
+      <main-button title="Kedvenc előadások" icon="heart" (click)="favorite()"></main-button>
+      <main-button title="{{text}}" icon="pin" (click)="location()"></main-button>
     </div>
 
     <div class="bot-container">

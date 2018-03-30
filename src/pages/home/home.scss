@@ -1,33 +1,38 @@
+@import '../../app/flexbox';
+
 page-home {
-    .main-container {
+    .page-container {
         display: flex;
         flex-direction: column;
-        height: 100%;
-        justify-content: space-between;
-        padding: 1rem 0;
+        min-height: 100%;
+        @include gap(1rem);
         > div {
-            height: 25%;
-            min-height: 15rem;
+            flex-basis: 25%;
+            flex: 1;
+        }
+        .img-container {
+            img {
+
+            padding: 0 2rem;
+                height: 100%;
+                margin: 0 auto;
+            }
+        }
+        .top-container {
+            display: flex;
+            flex-wrap: wrap;
+            @include gap(1rem);
+            > * {
+                flex: 1;
+                min-width: 140px;
+            }
             
         }
-    }
-    .img-container {
-        img {
-            height: 100%;
-            display: block;
-            margin: 0 auto;
+        .bot-container {
+            display: flex;
+            > * {
+                flex: 1;
+            }
         }
-    }
-    .top-container {
-        display: flex;
-        justify-content: space-between;
-        min-width: 30rem;
-        > div {
-            width: 45%;
-            
-        }
-    }
-    .bot-container {
-        min-width: 30rem;
     }
 }
