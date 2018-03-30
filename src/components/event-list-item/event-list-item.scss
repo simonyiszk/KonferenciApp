@@ -1,40 +1,47 @@
+@import '../../app/breakpoints';
+@import '../../app/flexbox';
+
 event-list-item {
-    .container {
+    .comp-container {
         display: flex;
+        @include media-maxwidth(sm){
+            flex-wrap: wrap;
+        }
+
+        @include gap(0.5rem 1rem);
         background-color: rgba(255,255,255,0.1);
         color: white;
-        margin: 1rem;
         justify-content: space-between;
-        min-width: 35rem;
-    }
 
-    .timeDiv {
-         font-size: 1.5rem;
-         padding: 1rem;
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-    }
-    .textDiv {
-        flex-grow: 1;
-        margin: 0 1rem;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .titleDiv {
-        font-size: 2rem;
-    }
-    .performerDiv {
-        margin-top: 1rem;
-    }
-    .heartDiv {
-        padding: 2rem;
-        display: flex;
-        align-items: center;
-        ion-icon {
-            font-size: 4rem;
+        .timeDiv {
+            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+       }
+       .textDiv {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @include media-maxwidth(sm){
+                order: 1;
+            }
+            .titleDiv {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            .performerDiv {
+                margin-top: 1rem;
+            }
+       }
+       .heartDiv {
+            display: flex;
+            align-items: center;
+            ion-icon {
+                font-size: 4rem;
+                margin: 0 1rem;
+            }
         }
     }
 }
