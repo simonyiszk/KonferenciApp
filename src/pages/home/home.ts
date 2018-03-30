@@ -16,7 +16,7 @@ export class HomePage {
 
   text:string;
   constructor(/*private oneSignal: OneSignal, */public userData: UserProvider, public navCtrl: NavController) {
-    this.text = "Valami";
+    this.text = "Helyszín";
     /*this.oneSignal.startInit('962eb6f9-c14b-4587-a025-1ff89486b119', '407073725617');
 
     this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
