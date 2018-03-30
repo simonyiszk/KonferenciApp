@@ -24,7 +24,7 @@
   </ion-refresher>
 
   <div class="swipe-content" (swipe)="swipeEvent($event)">
-    <div *ngFor="let pres of (data ? data : [])">
+    <div *ngFor="let pres of (data ? data : [])" class="event-container">
       <event-list-item [presentation]="pres" (openPresentation)="openPresentation($event)" (makeItFavorite)="makeItFavorite($event)"></event-list-item>
     </div>
   </div>
