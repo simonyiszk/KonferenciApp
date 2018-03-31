@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { OneSignal } from '@ionic-native/onesignal';
-
 import { LocationPage } from '../location/location';
 import { GamePage } from '../game/game';
 
@@ -15,7 +13,7 @@ import { UserProvider } from '../../providers/user/user';
 export class HomePage {
 
   text:string;
-  constructor(private oneSignal: OneSignal, public userData: UserProvider, public navCtrl: NavController) {
+  constructor(public userData: UserProvider, public navCtrl: NavController) {
     this.text = "Helyszín";
   }
 
