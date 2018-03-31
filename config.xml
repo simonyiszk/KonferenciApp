@@ -85,5 +85,5 @@
     <plugin name="cordova-sqlite-storage" spec="^2.2.1" />
     <plugin name="onesignal-cordova-plugin" spec="^2.3.3" />
     <allow-navigation href="http://192.168.1.73:8100" />
-    <engine name="ios" spec="~4.5.4" />
+    <engine name="ios" spec="4.5.4" />
 </widget>
