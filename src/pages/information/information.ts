@@ -29,12 +29,21 @@ export class InformationPage {
 
   resizeCircle(width: number) {
     //(w/2)^2/10 + 2,5 = r
+    let height;
+    if (window.matchMedia("(max-width: 370px)").matches) {
+      height = 110;
+    } else {
+      height = 55
+    }
+    const hStr = height + "rem";
+    document.getElementById("svg").setAttribute('height', hStr);
+
     const platWidth = width / 10;
-    const h = (platWidth * platWidth / 40 + 2.5);
-    const rStr = h + "rem";
+    const r = (platWidth * platWidth / 40 + 2.5);
+    const rStr = r + "rem";
     document.getElementById("svgcircle").setAttribute('r', rStr);
 
-    const yStr = (h + 50) + "rem";
+    const yStr = (r + height-5) + "rem";
     document.getElementById("svgcircle").setAttribute('cy', yStr);
   }
 }
