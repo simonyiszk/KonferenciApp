@@ -16,14 +16,14 @@ import { UserProvider } from '../../providers/user/user';
 export class GamePage {
 
   loggedIn: any;
-  email: string;
+  emailInput: string;
 
   constructor(public userData: UserProvider, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
     this.loggedIn = userData.loggedIn;
   }
 
   login() {
-    this.userData.login(this.email).then(() => {
+    this.userData.login(this.emailInput).then(() => {
       //ITS SO UGLY
       this.navCtrl.pop();
       this.navCtrl.push(GamePage);

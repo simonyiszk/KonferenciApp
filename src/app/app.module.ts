@@ -17,6 +17,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { ComponentsModule } from '../components/components.module';
 import { IonicStorageModule } from '@ionic/storage';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -45,7 +46,8 @@ import { ExpoProvider } from '../providers/expo/expo';
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     ComponentsModule,
-    HttpModule
+    HttpModule,
+    NgxQRCodeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

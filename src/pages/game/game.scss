@@ -4,11 +4,6 @@ page-game {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
-    .logout-text {
-        color:white;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
     .input-section{
         background-color: white;
         &, *{
@@ -21,5 +16,22 @@ page-game {
         border: 3px solid white;
         height: 5rem;
         background-color: transparent;
+    }
+    
+    .page-container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .logout-text {
+            color:white;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .qr-container {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }

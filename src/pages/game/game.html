@@ -22,17 +22,17 @@
     </div>
     <form (ngSubmit)="login()">
       <ion-item class="input-section">
-        <ion-input [(ngModel)]="email" name="email"></ion-input>
+        <ion-input [(ngModel)]="emailInput" name="emailInput"></ion-input>
       </ion-item>
       <button ion-button type="submit" block class="send-button">Regisztrálok a játékra!</button>
     </form>
   </div>
-  <div *ngIf="loggedIn">
+  <div *ngIf="loggedIn" class="page-container">
     <div class="login-text">
       Mutasd fel a QR-kódodat a standoknál!
     </div>
-    <div style="color:white; font-size: 5rem;border:2px solid white;">
-      EZ EGY QR-KÓD, CSAK NAGYON CSÚNYA
+    <div class="qr-container">
+      <ngx-qrcode [qrc-value]="userData.username" qrc-version = "5"></ngx-qrcode>
     </div>
   </div>
 </ion-content>
