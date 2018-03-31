@@ -1,20 +1,21 @@
 expo-list-item {
-    .container {
+    .comp-container {
         display: flex;
         background-color: rgba(255,255,255,0.1);
         color: white;
-        margin: 1rem;
+        padding: 0.5rem 1rem;
         justify-content: space-between;
-        min-width: 35rem;
-    }
-    .numberDiv {
-        font-size: 3rem;
-    }
-    .textDiv {
-        flex-grow: 1;
-        margin: 0 1rem;
-        font-size: 2rem;
-        padding: 1rem;
-        text-align: center;
+        align-items: center;
+
+        .numberDiv {
+            flex-basis: 3rem;
+            font-size: 3rem;
+        }
+        .textDiv {
+            flex-grow: 1;
+            margin: 0 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
     }
 }
