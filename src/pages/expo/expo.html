@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <div class="img-container">
-    <img src="../../assets/imgs/expo.png" />
+    <img src="./assets/imgs/expo.png" />
   </div>
   <div *ngFor="let expo of (data ? data : [])" class="expo-container">
     <expo-list-item [expo]="expo" (openExpo)="openExpo($event)"></expo-list-item>
