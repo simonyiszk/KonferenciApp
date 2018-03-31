@@ -23,17 +23,18 @@ export class GamePage {
   }
 
   login() {
-    this.userData.login(this.emailInput).then(() => {
-      //ITS SO UGLY
-      this.navCtrl.pop();
-      this.navCtrl.push(GamePage);
-      let toast = this.toastCtrl.create({
-        message: 'Sikeresen regisztráltál a játékra',
-        duration: 3000,
-        position: 'top'
+    if(this.emailInput)
+      this.userData.login(this.emailInput).then(() => {
+        //ITS SO UGLY
+        this.navCtrl.pop();
+        this.navCtrl.push(GamePage);
+        let toast = this.toastCtrl.create({
+          message: 'Sikeresen regisztráltál a játékra',
+          duration: 3000,
+          position: 'top'
+        });
+        toast.present();
       });
-      toast.present();
-    });
 
   }
 }
