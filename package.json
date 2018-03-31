@@ -48,12 +48,12 @@
   "cordova": {
     "plugins": {
       "cordova-sqlite-storage": {},
-      "onesignal-cordova-plugin": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "onesignal-cordova-plugin": {}
     },
     "platforms": [
       "ios"
