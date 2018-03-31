@@ -1,3 +1,14 @@
 page-expo {
+    .img-container {
+        display: flex;
+        justify-content: center;
+        height: 20rem;
 
+        img {
+            height: 100%;
+        }
+    }
+    .expo-container {
+        margin: 1.5rem 0.5rem;
+    }
 }
