@@ -15,24 +15,24 @@
 
 <ion-content padding>
   <div *ngIf="!loggedIn">
-    <div class="logout-text">
-      Lorem ipsum Patrik kurvajóarc consectetur adipiscing elit. Mauris sagittis congue venenatis. Suspendisse commodo orci in
-      magna tincidunt, vel fringilla velit mattis. Vivamus suscipit, mauris quis euismod luctus, erat nisl volutpat turpis,
-      nec
+    <div class="loggedout-text">
+      A nyereményjátékban való részvételhez kérlek jelentkezz be!
+      <br />
+      <span style="font-weight: bold;">FONTOS: A regisztráció során megadott e-mail címmel lépj be!</span>
     </div>
     <form (ngSubmit)="login()">
       <ion-item class="input-section">
         <ion-input [(ngModel)]="emailInput" name="emailInput"></ion-input>
       </ion-item>
-      <button ion-button type="submit" block class="send-button">Regisztrálok a játékra!</button>
+      <button ion-button type="submit" block id="send-button">Részt veszek a játékban!</button>
     </form>
   </div>
   <div *ngIf="loggedIn" class="page-container">
-    <div class="login-text">
+    <div class="loggedin-text">
       Mutasd fel a QR-kódodat a standoknál!
     </div>
     <div class="qr-container">
-      <ngx-qrcode [qrc-value]="userData.username" qrc-version = "5"></ngx-qrcode>
+      <ngx-qrcode [qrc-value]="userData.username" qrc-version="5"></ngx-qrcode>
     </div>
   </div>
 </ion-content>

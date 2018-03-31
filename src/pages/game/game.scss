@@ -1,5 +1,6 @@
 page-game {
-    .login-text {
+    
+    .loggedout-text {
         color:white;
         font-size: 2rem;
         margin-bottom: 2rem;
@@ -10,7 +11,7 @@ page-game {
             padding: 0 !important;
         }
     }
-    .send-button{
+    #send-button{
         color: white;
         font-weight: bold;
         border: 3px solid white;
@@ -22,7 +23,7 @@ page-game {
         display: flex;
         flex-direction: column;
         height: 100%;
-        .logout-text {
+        .loggedin-text {
             color:white;
             font-size: 2rem;
             margin-bottom: 2rem;
