@@ -1,38 +1,45 @@
 page-information {
-    .content-bg {
+    .page-background {
         background: white;
         position: relative;
-    }
-    .section-white {
-        color: white;
-        text-align: center;
-    }
-    .section-claret {
-        color: color($colors, header);
-        text-align: center;
-    }
-    .tam {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        img {
-            margin: 0.5rem 1rem;
+
+        .organizer-container{
+            margin: 2rem 1rem;
         }
-    }
-    .fotamogato img{
-        height: 6rem;
-    }
-    .kiemelttamogato img{
-        height: 4rem;
-    }
-    .tamogato img{
-        height: 3rem;
-    }
-    svg {
-        @extend .content;
-        position: absolute;
-        top:0;
-        left:0;
-        z-index: -1;
+        
+        .section-white {
+            color: white;
+            text-align: center;
+        }
+        .section-claret {
+            color: color($colors, header);
+            text-align: center;
+        }
+
+        .tam {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            img {
+                margin: 0.5rem 1rem;
+            }
+        }
+        .fotamogato img{
+            height: 6rem;
+        }
+        .kiemelttamogato img{
+            height: 4rem;
+        }
+        .tamogato img{
+            height: 3rem;
+        }
+        
+        svg {
+            @extend .content;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: -1;
+        }
     }
 }
