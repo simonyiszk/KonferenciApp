@@ -17,23 +17,6 @@ export class HomePage {
   text:string;
   constructor(private oneSignal: OneSignal, public userData: UserProvider, public navCtrl: NavController) {
     this.text = "Helyszín";
-    this.oneSignal.startInit('962eb6f9-c14b-4587-a025-1ff89486b119', '407073725617');
-
-    this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
-
-    this.oneSignal.handleNotificationReceived().subscribe(() => {
-      console.log("sub1");
-      this.text = "recieve";
-    // do something when notification is received
-    });
-
-    this.oneSignal.handleNotificationOpened().subscribe(() => {
-      // do something when a notification is opened
-      console.log("sub2");
-      this.text = "opened";
-    });
-
-    this.oneSignal.endInit();
   }
 
   favorite() {

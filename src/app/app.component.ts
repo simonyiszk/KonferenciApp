@@ -1,39 +1,69 @@
-import { Component } from '@angular/core';
-import { Platform, App, ViewController } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { Component } from "@angular/core";
+import { Platform, App, ViewController } from "ionic-angular";
+import { StatusBar } from "@ionic-native/status-bar";
+import { SplashScreen } from "@ionic-native/splash-screen";
 
-import { TabsPage } from '../pages/tabs/tabs';
+import { TabsPage } from "../pages/tabs/tabs";
 
-import { PresentationProvider } from '../providers/presentation/presentation';
-import { UserProvider } from '../providers/user/user';
-import { InformationProvider } from '../providers/information/information';
-import { ExpoProvider } from '../providers/expo/expo';
+import { PresentationProvider } from "../providers/presentation/presentation";
+import { UserProvider } from "../providers/user/user";
+import { InformationProvider } from "../providers/information/information";
+import { ExpoProvider } from "../providers/expo/expo";
+import { OneSignal } from "@ionic-native/onesignal";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: "app.html"
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage: any = TabsPage;
 
-  constructor(expoData: ExpoProvider, infoData: InformationProvider, userData: UserProvider, presData: PresentationProvider, app: App, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(
+    oneSignal: OneSignal,
+    expoData: ExpoProvider,
+    infoData: InformationProvider,
+    userData: UserProvider,
+    presData: PresentationProvider,
+    app: App,
+    platform: Platform,
+    statusBar: StatusBar,
+    splashScreen: SplashScreen
+  ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+
+      if (platform.is("cordova")) {
+        /*Onesignal id and firebase id*/
+        oneSignal.startInit(
+          "962eb6f9-c14b-4587-a025-1ff89486b119",
+          "407073725617"
+        );
+        oneSignal.inFocusDisplaying(
+          oneSignal.OSInFocusDisplayOption.InAppAlert
+        );
+        oneSignal.handleNotificationReceived().subscribe(message => {
+          // do something when notification is received
+        });
+        oneSignal.handleNotificationOpened().subscribe(() => {
+          // do something when a notification is opened
+        });
+
+        oneSignal.endInit();
+      }
+
       statusBar.styleDefault();
       splashScreen.hide();
 
       platform.registerBackButtonAction(() => {
         let nav = app.getActiveNav();
-        
+
         let activeView: ViewController = nav.getActive();
-    
-        if(nav.canGoBack()){
+
+        if (nav.canGoBack()) {
           nav.pop();
-        }
-        else if(activeView.component.name=="HomePage"){
+        } else if (activeView.component.name == "HomePage") {
           platform.exitApp();
-        }else{
+        } else {
           nav.parent.select(0);
         }
       });

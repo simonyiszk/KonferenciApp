@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.konferenciapp267822" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.konferenciapp267822" version="1.2.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>KonferenciApp</name>
     <description>A XV. Simonyi Konferencia hivatalos mobil applikációja</description>
     <author email="frey.balazs@simonyi.bme.hu" href="http://konferencia.simonyi.bme.hu/">Konferencia rendezők</author>
@@ -84,5 +84,6 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-sqlite-storage" spec="^2.2.1" />
     <plugin name="onesignal-cordova-plugin" spec="^2.3.3" />
-    <engine name="ios" spec="4.5.4" />
+    <allow-navigation href="http://192.168.1.73:8100" />
+    <engine name="ios" spec="~4.5.4" />
 </widget>
