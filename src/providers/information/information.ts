@@ -23,7 +23,7 @@ export class InformationProvider {
     if (this.data) {
       return Observable.of(this.data);
     } else {
-      return this.http.get('../../assets/data/information.json')
+      return this.http.get('./assets/data/information.json')
         .map((res) => {
           this.data = res.json();
           return this.data;
