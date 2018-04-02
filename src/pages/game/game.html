@@ -32,6 +32,9 @@
       Mutasd fel a QR-kódodat a standoknál!
     </div>
     <div class="qr-container">
+      <div class="lightbulb-container" (click)="switchLight()">
+        Lőn világosság(ikon)
+      </div>
       <ngx-qrcode [qrc-value]="userData.username" qrc-version="5"></ngx-qrcode>
     </div>
   </div>

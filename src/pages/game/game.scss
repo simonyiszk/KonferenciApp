@@ -28,8 +28,14 @@ page-game {
             font-size: 2rem;
             margin-bottom: 2rem;
         }
+        .lightbulb-container {
+            color:white;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
         .qr-container {
             display: flex;
+            flex-direction: column;
             flex-grow: 1;
             justify-content: center;
             align-items: center;

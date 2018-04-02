@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController, Platform } from 'ionic-angular';
+
+import { Brightness } from '@ionic-native/brightness';
 
 import { UserProvider } from '../../providers/user/user';
 /**
@@ -17,13 +19,23 @@ export class GamePage {
 
   loggedIn: any;
   emailInput: string;
+  lightsOn: boolean;
+  lastBrightness: number;
 
-  constructor(public userData: UserProvider, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public userData: UserProvider,
+    private brightness: Brightness,
+    private platform: Platform,
+    public toastCtrl: ToastController,
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {
     this.loggedIn = userData.loggedIn;
+    this.lightsOn = false;
   }
 
   login() {
-    if(this.emailInput)
+    if (this.emailInput)
       this.userData.login(this.emailInput).then(() => {
         //ITS SO UGLY
         this.navCtrl.pop();
@@ -35,6 +47,25 @@ export class GamePage {
         });
         toast.present();
       });
+  }
 
+  switchLight() {
+    if (this.platform.is("cordova")) {
+      if (!this.lightsOn) {
+        this.brightness.getBrightness()
+          .then((value) => {
+            this.lastBrightness = value;
+            this.lightsOn = true;
+          })
+          .then(() => {
+            this.brightness.setBrightness(1.0);
+          });
+
+      }
+      else {
+        this.brightness.setBrightness(this.lastBrightness);
+        this.lightsOn = false;
+      }
+    }
   }
 }
