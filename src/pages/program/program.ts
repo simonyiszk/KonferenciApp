@@ -14,10 +14,6 @@ export class ProgramPage {
 
   data: any;
 
-  ionRefresher: any;
-  ionRefContent: any;
-  scrollContent: any;
-
   constructor(
     public userData: UserProvider,
     public presData: PresentationProvider,
@@ -25,11 +21,6 @@ export class ProgramPage {
     public navCtrl: NavController
   ) {
     this.change();
-  }
-  ionViewDidLoad(){
-    this.ionRefresher = (document.getElementsByTagName("ion-refresher"))[0];
-    this.ionRefContent = (document.getElementsByTagName("ion-refresher-content"))[0];
-    this.scrollContent = document.querySelector("page-program .scroll-content");
   }
   change() {
     this.presData.filterPresentation(this.userData.currentPage).subscribe((data: any) => {
@@ -41,9 +32,7 @@ export class ProgramPage {
   swipeTo(page) {
     this.userData.currentPage = page;
     this.change();
-    this.ionRefresher.classList.remove("refresher-active");
-    this.ionRefContent.setAttribute("state", "inactive");
-    this.scrollContent.setAttribute("style", "margin-top: 107px; margin-bottom: 56px;")
+    this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
   swipeEvent(ev) {
     if (ev.distance >= 100) {
