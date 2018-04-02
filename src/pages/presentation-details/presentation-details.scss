@@ -37,13 +37,6 @@ page-presentation-details {
     }
     .text-section{
         font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    .input-section{
-        background-color: white;
-        &, *{
-            padding: 0 !important;
-        }
     }
     .send-button{
         color: white;
@@ -51,5 +44,9 @@ page-presentation-details {
         border: 3px solid white;
         height: 5rem;
         background-color: transparent;
+    }
+    .input-section{
+        font-size: 1.6rem;
+        margin: 1rem 0 0 0;
     }
 }

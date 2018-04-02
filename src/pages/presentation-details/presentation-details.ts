@@ -17,6 +17,7 @@ import { UserProvider } from '../../providers/user/user';
 export class PresentationDetailsPage {
 
   presentation: any;
+  name: any;
   question: any;
 
   constructor(public userData: UserProvider, public presData: PresentationProvider, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
@@ -34,7 +35,7 @@ export class PresentationDetailsPage {
 
   sendQuestion() {
     if (this.question) {
-      this.presData.sendQuestion(this.question).subscribe((data: any) => {
+      this.presData.sendQuestion(this.presentation.id, this.name, this.question).subscribe((data: any) => {
         let toast = this.toastCtrl.create({
           message: 'A kérdést elküldtük',
           duration: 3000,

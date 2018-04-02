@@ -33,8 +33,13 @@
       <strong>{{presentation.performer}}</strong> részére:
     </div>
     <form (ngSubmit)="sendQuestion()">
-      <ion-item class="input-section">
-        <ion-textarea [(ngModel)]="question" name="question" rows="5"></ion-textarea>
+      <div class="input-section">Név:</div>
+      <ion-item>
+        <ion-input [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+      <div class="input-section">Kérdés:</div>
+      <ion-item>
+        <ion-textarea [(ngModel)]="question" name="question" rows="4"></ion-textarea>
       </ion-item>
       <button ion-button type="submit" block class="send-button">Küldés</button>
     </form>
