@@ -36,7 +36,7 @@ export class ProgramPage {
     this.change();
   }
   swipeEvent(ev) {
-    if (ev.distance >= 150) {
+    if (ev.distance >= 100) {
       switch (this.userData.currentPage) {
         case 'IB025':
           console.log("ib025");
