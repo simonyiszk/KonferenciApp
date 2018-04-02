@@ -15,7 +15,6 @@ page-presentation-details {
         .details-performer{
             display: flex;
             flex-direction: column;
-            justify-content: center;
             .details-name{
                 font-size: 2.5rem;
             }
@@ -30,6 +29,9 @@ page-presentation-details {
         font-size: 3rem;
         ion-icon {
             font-size: 5rem;
+        }
+        .details-presentation{
+            padding-right: 1rem;
         }
     }
     .desc-section{
