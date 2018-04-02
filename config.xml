@@ -86,4 +86,5 @@
     <plugin name="onesignal-cordova-plugin" spec="^2.3.3" />
     <allow-navigation href="http://192.168.1.73:8100" />
     <engine name="ios" spec="4.5.4" />
+    <plugin name="cordova-plugin-brightness" spec="^0.2.0" />
 </widget>
