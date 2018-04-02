@@ -38,20 +38,17 @@ export class ProgramPage {
   swipeEvent(ev) {
     if (ev.distance >= 100) {
       switch (this.userData.currentPage) {
-        case 'IB025':
-          console.log("ib025");
+        case 'IB028':
           if (ev.direction == 2)
             this.swipeTo("favorite");
           break;
         case 'favorite':
-          console.log("fav");
           if (ev.direction == 2)
-            this.swipeTo("IB028");
-          else if (ev.direction == 4)
             this.swipeTo("IB025");
+          else if (ev.direction == 4)
+            this.swipeTo("IB028");
           break;
-        case 'IB028':
-          console.log("ib028");
+        case 'IB025':
           if (ev.direction == 4)
             this.swipeTo("favorite");
           break;

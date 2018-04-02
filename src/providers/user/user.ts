@@ -14,7 +14,7 @@ export class UserProvider {
   loggedIn: boolean;
   username: string = "Guest";
   favorites: number[] = [];
-  currentPage = "IB025";
+  currentPage = "IB028";
 
   constructor(public http: Http, public storage: Storage) {
     this.storage.get("userLogin").then((value) => {
