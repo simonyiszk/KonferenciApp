@@ -15,18 +15,18 @@
   <h1 class="section-white">Támogatóink</h1>
 
   <h1 class="section-claret">Főtámogató</h1>
-  <div class="fotamogato tam">
-    <img [src]="data.mainsup?.img" />
+  <div class="supp-section">
+    <img [src]="data.mainsup?.img" [ngStyle]="{ 'height': data.mainsup?.height }" />
   </div>
 
   <h1 class="section-claret">Kiemelt támogatók</h1>
-  <div class="kiemelttamogato tam">
-    <img *ngFor="let d of data?.accentuatedsup" [src]="d.img" />
+  <div class="supp-section">
+    <img *ngFor="let d of data?.accentuatedsup" [src]="d.img" [ngStyle]="{ 'height': d.height }" />
   </div>
 
   <h1 class="section-claret">Támogatók</h1>
-  <div class="tamogato tam">
-    <img *ngFor="let d of data?.othersup" [src]="d.img" />
+  <div class="supp-section">
+    <img *ngFor="let d of data?.othersup" [src]="d.img" [ngStyle]="{ 'height': d.height }" />
   </div>
 
   <svg id="svg" width="100%" height="55rem" xmlns="http://www.w3.org/2000/svg">
