@@ -4,7 +4,7 @@
 event-list-item {
     .comp-container {
         display: flex;
-        @include media-maxwidth(sm){
+        @include media-maxwidth(md){
             flex-wrap: wrap;
         }
 
@@ -24,7 +24,7 @@ event-list-item {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            @include media-maxwidth(sm){
+            @include media-maxwidth(md){
                 order: 1;
             }
             .titleDiv {
