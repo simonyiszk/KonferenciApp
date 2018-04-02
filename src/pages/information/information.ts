@@ -31,7 +31,7 @@ export class InformationPage {
     //(w/2)^2/10 + 2,5 = r
     let height;
     if (window.matchMedia("(max-width: 370px)").matches) {
-      height = 110;
+      height = 109;
     } else {
       height = 55
     }
