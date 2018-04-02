@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
-import { ExpoDetailsPage } from '../expo-details/expo-details';
+import { NavController, AlertController } from 'ionic-angular';
 
 import { ExpoProvider } from '../../providers/expo/expo';
 
@@ -13,7 +11,7 @@ export class ExpoPage {
 
   data: any;
 
-  constructor(public expoData: ExpoProvider, public navCtrl: NavController) {
+  constructor(public expoData: ExpoProvider, public alertCtrl: AlertController, public navCtrl: NavController) {
     expoData.get().subscribe((data: any) => {
       this.data = data;
       console.log(data);
@@ -21,6 +19,18 @@ export class ExpoPage {
   }
 
   openExpo(ev) {
-    this.navCtrl.push(ExpoDetailsPage, { expo: ev });
+    //this.navCtrl.push(ExpoDetailsPage, { expo: ev });
+    let alert = this.alertCtrl.create({
+      title: ev.name,
+      message: ev.description,
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 }

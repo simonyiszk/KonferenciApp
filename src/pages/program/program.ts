@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, Refresher } from 'ionic-angular';
+import { NavController, Refresher } from 'ionic-angular';
 
 import { PresentationDetailsPage } from '../presentation-details/presentation-details';
 
@@ -17,7 +17,6 @@ export class ProgramPage {
   constructor(
     public userData: UserProvider,
     public presData: PresentationProvider,
-    public alertCtrl: AlertController,
     public navCtrl: NavController
   ) {
     this.change();
