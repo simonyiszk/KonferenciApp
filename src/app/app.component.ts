@@ -50,8 +50,13 @@ export class MyApp {
 
         oneSignal.endInit();
       }
+      statusBar.styleLightContent();
+      if(platform.is("android")){
+        statusBar.backgroundColorByHexString("#42162C");
+      }
+      //Dunno if it works or not
+      //statusBar.styleDefault();
 
-      statusBar.styleDefault();
       splashScreen.hide();
 
       platform.registerBackButtonAction(() => {
