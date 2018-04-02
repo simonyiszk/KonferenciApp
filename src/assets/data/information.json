@@ -23,37 +23,90 @@
         }
     ],
     "mainsup": {
-        "name": "schdesign",
-        "link": "https://konferencia.simonyi.bme.hu",
-        "img": "./assets/imgs/supporters/sds.svg"
+        "name": "Vodafone",
+        "link": "https://www.vodafone.hu/karrier",
+        "img": "./assets/imgs/supporters/vodafone.svg",
+        "height": "6em"
     },
     "accentuatedsup": [
         {
-            "name": "schdesign",
-            "link": "https://konferencia.simonyi.bme.hu",
-            "img": "./assets/imgs/supporters/sds.svg"
+            "name": "BME Villamosmérnöki és Informatikai Kar",
+            "link": "https://www.vik.bme.hu",
+            "img": "./assets/imgs/supporters/bme-vik.svg",
+            "height": "5em"
         },
         {
-            "name": "schdesign",
-            "link": "https://konferencia.simonyi.bme.hu",
-            "img": "./assets/imgs/supporters/sds.svg"
+            "name": "Accenture",
+            "link": "https://www.accenture.com/beyourself",
+            "img": "./assets/imgs/supporters/accenture.svg",
+            "height": "3em"
+        },
+        {
+            "name": "Bosch",
+            "link": "http://www.bosch-career.hu",
+            "img": "./assets/imgs/supporters/bosch.svg",
+            "height": "3em"
+        },
+        {
+            "name": "Lightware",
+            "link": "http://hr.visualengineering.eu",
+            "img": "./assets/imgs/supporters/lightware.svg",
+            "height": "3em"
+        },
+        {
+            "name": "National Instruments",
+            "link": "#",
+            "img": "./assets/imgs/supporters/national-instruments.svg",
+            "height": "3em"
+        },
+        {
+            "name": "Nokia Bell Labs",
+            "link": "https://www.facebook.com/nokiahungary",
+            "img": "./assets/imgs/supporters/nokia-bell-labs.svg",
+            "height": "1.5em"
+        },
+        {
+            "name": "OTP Bank",
+            "link": "https://karrier.otpbank.hu",
+            "img": "./assets/imgs/supporters/otp-bank.svg",
+            "height": "3em"
+        },
+        {
+            "name": "Sicontact",
+            "link": "https://www.eset.com/hu",
+            "img": "./assets/imgs/supporters/sicontact.svg",
+            "height": "3em"
         }
     ],
     "othersup": [
         {
-            "name": "schdesign",
-            "link": "https://konferencia.simonyi.bme.hu",
-            "img": "./assets/imgs/supporters/sds.svg"
+            "name": "Simonyi Károly Szakkollégium",
+            "link": "https://simonyi.bme.hu",
+            "img": "./assets/imgs/supporters/simonyi-szakkollegium.svg",
+            "height": "3em"
         },
         {
-            "name": "schdesign",
-            "link": "https://konferencia.simonyi.bme.hu",
-            "img": "./assets/imgs/supporters/sds.svg"
+            "name": "Schönherz",
+            "link": "https://sch.hu",
+            "img": "./assets/imgs/supporters/schonherz.svg",
+            "height": "3em"
         },
         {
-            "name": "schdesign",
-            "link": "https://konferencia.simonyi.bme.hu",
-            "img": "./assets/imgs/supporters/sds.svg"
+            "name": "Schönherz Vállalati Kapcsolatok",
+            "link": "https://www.facebook.com/SchonherzVallalatiKapcsolatok",
+            "img": "./assets/imgs/supporters/svk.svg",
+            "height": "3em"
+        },
+        {
+            "name": "Antenna Hungária",
+            "link": "https://ahrt.hu",
+            "img": "./assets/imgs/supporters/antenna-hungaria.svg",
+            "height": "3em"
+        },
+        {
+            "name": "SZOMEL",
+            "img": "./assets/imgs/supporters/szomel.png",
+            "height": "2em"
         }
     ]
 }
