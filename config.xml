@@ -40,6 +40,7 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+        <hook src="resources/hooks/copy_android_notification_icons.js" type="after_prepare" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -85,6 +86,7 @@
     <plugin name="cordova-sqlite-storage" spec="^2.2.1" />
     <plugin name="onesignal-cordova-plugin" spec="^2.3.3" />
     <allow-navigation href="http://192.168.1.73:8100" />
-    <engine name="ios" spec="4.5.4" />
     <plugin name="cordova-plugin-brightness" spec="^0.2.0" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="6.4.0" />
 </widget>
