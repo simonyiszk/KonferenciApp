@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { Platform, App, ViewController } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
+import { OneSignal } from "@ionic-native/onesignal";
+import { HeaderColor } from '@ionic-native/header-color';
 
 import { TabsPage } from "../pages/tabs/tabs";
 
@@ -9,7 +11,6 @@ import { PresentationProvider } from "../providers/presentation/presentation";
 import { UserProvider } from "../providers/user/user";
 import { InformationProvider } from "../providers/information/information";
 import { ExpoProvider } from "../providers/expo/expo";
-import { OneSignal } from "@ionic-native/onesignal";
 
 @Component({
   templateUrl: "app.html"
@@ -18,6 +19,7 @@ export class MyApp {
   rootPage: any = TabsPage;
 
   constructor(
+    headerColor: HeaderColor,
     oneSignal: OneSignal,
     expoData: ExpoProvider,
     infoData: InformationProvider,
@@ -50,10 +52,11 @@ export class MyApp {
 
         oneSignal.endInit();
       }
-      statusBar.styleLightContent();
+      statusBar.overlaysWebView(false);
+      /*statusBar.styleLightContent();
       if(platform.is("android")){
-        statusBar.backgroundColorByHexString("#42162C");
-      }
+        headerColor.tint("#FFFFFF");
+      }*/
       //Dunno if it works or not
       //statusBar.styleDefault();
 
