@@ -1,14 +1,26 @@
 page-expo {
-    .img-container {
+    .page-container {
         display: flex;
-        justify-content: center;
-        height: 20rem;
+        flex-direction: column;
+        height: 100%;
+        .img-container {
+            display: flex;
+            justify-content: center;
+            height: 20rem;
 
-        img {
-            height: 100%;
+            img {
+                height: 100%;
+            }
         }
-    }
-    .expo-container {
-        margin: 1.5rem 0.5rem;
+        ion-scroll {
+            flex-grow: 1;
+            margin-top: 1rem;
+            /*> .scroll-content {
+
+            }*/
+        }
+        .expo-container {
+            margin: 1.5rem 0.5rem;
+        }
     }
 }

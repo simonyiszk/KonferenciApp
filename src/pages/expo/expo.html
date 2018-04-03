@@ -7,10 +7,14 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="img-container">
-    <img src="./assets/imgs/expo.png" />
-  </div>
-  <div *ngFor="let expo of (data ? data : [])" class="expo-container">
-    <expo-list-item [expo]="expo" (openExpo)="openExpo($event)"></expo-list-item>
+  <div class="page-container">
+    <div class="img-container">
+      <img src="./assets/imgs/expo.png" />
+    </div>
+    <ion-scroll scrollY="true">
+      <div *ngFor="let expo of (data ? data : [])" class="expo-container">
+        <expo-list-item [expo]="expo" (openExpo)="openExpo($event)"></expo-list-item>
+      </div>
+    </ion-scroll>
   </div>
 </ion-content>
