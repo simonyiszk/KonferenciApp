@@ -17,6 +17,9 @@ export class EventListItemComponent {
   @Output() openPresentation = new EventEmitter();
   @Output() makeItFavorite = new EventEmitter();
 
+  favoriteIcon = "./assets/icon/heart-favorite.svg";
+  unfavoriteIcon = "./assets/icon/heart-unfavorite.svg";
+
   constructor(public userData: UserProvider) {
   }
   formattedTime():string {
@@ -35,6 +38,6 @@ export class EventListItemComponent {
       this.makeItFavorite.emit(this.presentation.id);
   }
   isFavorite():string{
-    return this.userData.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
+    return this.userData.isFavorite(this.presentation.id) ? this.favoriteIcon : this.unfavoriteIcon;
   }
 }

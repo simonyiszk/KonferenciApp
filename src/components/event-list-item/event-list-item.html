@@ -7,6 +7,6 @@
     <div *ngIf="presentation.break != 1" class="performerDiv">{{presentation.performer}}</div>
   </div>
   <div *ngIf="presentation.break != 1" class="heartDiv" (click)="favoriteClicked()">
-    <ion-icon name="{{isFavorite()}}"></ion-icon>
+    <img src="{{isFavorite()}}" />
   </div>
 </div>

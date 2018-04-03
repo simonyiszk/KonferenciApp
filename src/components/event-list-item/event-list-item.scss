@@ -35,12 +35,23 @@ event-list-item {
                 margin-top: 1rem;
             }
        }
-       .heartDiv {
+       /*.heartDiv {
             display: flex;
             align-items: center;
             ion-icon {
                 font-size: 4rem;
                 margin: 0 1rem;
+            }
+            
+        }*/
+        .heartDiv {
+            display: flex;
+            align-items: center;
+            height: 5rem;
+            flex-shrink: 0;
+            > img {
+                height: 100%;
+
             }
         }
     }
