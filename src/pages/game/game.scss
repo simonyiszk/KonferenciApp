@@ -27,19 +27,24 @@ page-game {
             font-size: 2rem;
             margin-bottom: 2rem;
         }
-        .lightbulb-container {
-            height: 15rem;
-            margin-bottom: 5rem;
-            > img {
-                height: 100%;
-            }
-        }
+        
         .qr-container {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
             justify-content: center;
             align-items: center;
+
+            .lightbulb-container {
+                height: 15rem;
+                > img {
+                    height: 100%;
+                }
+            }
+
+            ngx-qrcode {
+                margin: 5rem 0;
+            }
         }
     }
 }
