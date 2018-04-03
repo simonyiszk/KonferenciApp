@@ -11,9 +11,10 @@ page-home {
             flex: 1;
         }
         .img-container {
+            display: flex;
+            align-items: center;
             img {
-
-            padding: 0 2rem;
+                padding: 0 2rem;
                 height: 100%;
                 margin: 0 auto;
             }
