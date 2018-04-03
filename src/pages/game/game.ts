@@ -17,6 +17,9 @@ import { UserProvider } from '../../providers/user/user';
 })
 export class GamePage {
 
+  lightsOnIcon = "./assets/icon/light-bulb-on.svg";
+  lightsOffIcon = "./assets/icon/light-bulb-off.svg";
+
   loggedIn: any;
   emailInput: string;
   lightsOn: boolean;
@@ -67,5 +70,17 @@ export class GamePage {
         this.lightsOn = false;
       }
     }
+    else{
+      if (!this.lightsOn) {
+        this.lightsOn = true;
+      }
+      else {
+        this.lightsOn = false;
+      }
+    }
+  }
+
+  lightbulbIcon() {
+    return this.lightsOn ? this.lightsOnIcon: this.lightsOffIcon;
   }
 }

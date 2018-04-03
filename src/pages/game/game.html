@@ -33,7 +33,7 @@
     </div>
     <div class="qr-container">
       <div class="lightbulb-container" (click)="switchLight()">
-        Lőn világosság(ikon)
+        <img src="{{lightbulbIcon()}}" />
       </div>
       <ngx-qrcode [qrc-value]="userData.username" qrc-version="5"></ngx-qrcode>
     </div>

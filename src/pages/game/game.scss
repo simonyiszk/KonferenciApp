@@ -22,16 +22,17 @@ page-game {
     .page-container{
         display: flex;
         flex-direction: column;
-        height: 100%;
         .loggedin-text {
             color:white;
             font-size: 2rem;
             margin-bottom: 2rem;
         }
         .lightbulb-container {
-            color:white;
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            height: 15rem;
+            margin-bottom: 5rem;
+            > img {
+                height: 100%;
+            }
         }
         .qr-container {
             display: flex;
