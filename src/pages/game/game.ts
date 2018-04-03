@@ -22,8 +22,6 @@ export class GamePage {
 
   loggedIn: any;
   emailInput: string;
-  lightsOn: boolean;
-  lastBrightness: number;
 
   constructor(
     public userData: UserProvider,
@@ -34,7 +32,6 @@ export class GamePage {
     public navParams: NavParams
   ) {
     this.loggedIn = userData.loggedIn;
-    this.lightsOn = false;
   }
 
   login() {
@@ -54,11 +51,11 @@ export class GamePage {
 
   switchLight() {
     if (this.platform.is("cordova")) {
-      if (!this.lightsOn) {
+      if (!this.userData.lightsOn) {
         this.brightness.getBrightness()
           .then((value) => {
-            this.lastBrightness = value;
-            this.lightsOn = true;
+            this.userData.lastBrightness = value;
+            this.userData.lightsOn = true;
           })
           .then(() => {
             this.brightness.setBrightness(1.0);
@@ -66,21 +63,21 @@ export class GamePage {
 
       }
       else {
-        this.brightness.setBrightness(this.lastBrightness);
-        this.lightsOn = false;
+        this.brightness.setBrightness(this.userData.lastBrightness);
+        this.userData.lightsOn = false;
       }
     }
     else{
-      if (!this.lightsOn) {
-        this.lightsOn = true;
+      if (!this.userData.lightsOn) {
+        this.userData.lightsOn = true;
       }
       else {
-        this.lightsOn = false;
+        this.userData.lightsOn = false;
       }
     }
   }
 
   lightbulbIcon() {
-    return this.lightsOn ? this.lightsOnIcon: this.lightsOffIcon;
+    return this.userData.lightsOn ? this.lightsOnIcon: this.lightsOffIcon;
   }
 }
