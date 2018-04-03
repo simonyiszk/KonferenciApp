@@ -2,6 +2,9 @@ import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage';
+
+import { OneSignal } from "@ionic-native/onesignal";
+
 /*
   Generated class for the UserProvider provider.
 
@@ -16,7 +19,7 @@ export class UserProvider {
   favorites: number[] = [];
   currentPage = "IB028";
 
-  constructor(public http: Http, public storage: Storage) {
+  constructor(public http: Http, public storage: Storage, public oneSignal: OneSignal) {
     this.storage.get("userLogin").then((value) => {
       this.loggedIn = !!value;
       return value;
@@ -41,6 +44,7 @@ export class UserProvider {
   addFavorite(id: number): Promise<any> {
     return this.storage.set("favorites", [...this.favorites, id]).then(() => {
       this.favorites.push(id);
+      this.oneSignal.sendTag(`pres${id}`, "1");
     });
   }
   removeFavorite(id: number): Promise<any> {
@@ -52,6 +56,7 @@ export class UserProvider {
     }
     return this.storage.set("favorites", tmp).then(() => {
       this.favorites = tmp;
+      this.oneSignal.sendTag(`pres${id}`, "0");
     });
   }
   isFavorite(id: number) {
