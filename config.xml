@@ -89,4 +89,5 @@
     <plugin name="cordova-plugin-brightness" spec="^0.2.0" />
     <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="6.4.0" />
+    <plugin name="cordova-plugin-headercolor" spec="^1.0.0" />
 </widget>
