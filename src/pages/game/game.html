@@ -32,9 +32,6 @@
       Mutasd fel a QR-kódodat a standoknál!
     </div>
     <div class="qr-container">
-      <div class="lightbulb-container" (click)="switchLight()">
-        <img src="{{lightbulbIcon()}}" />
-      </div>
       <ngx-qrcode [qrc-value]="userData.username" qrc-version="8"></ngx-qrcode>
     </div>
   </div>

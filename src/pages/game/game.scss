@@ -22,6 +22,7 @@ page-game {
     .page-container{
         display: flex;
         flex-direction: column;
+        height: 100%;
         .loggedin-text {
             color:white;
             font-size: 2rem;
@@ -34,17 +35,6 @@ page-game {
             flex-grow: 1;
             justify-content: center;
             align-items: center;
-
-            .lightbulb-container {
-                height: 15rem;
-                > img {
-                    height: 100%;
-                }
-            }
-
-            ngx-qrcode {
-                margin: 5rem 0;
-            }
         }
     }
 }

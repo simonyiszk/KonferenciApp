@@ -48,36 +48,14 @@ export class GamePage {
         toast.present();
       });
   }
-
-  switchLight() {
+  ionViewDidEnter() {
     if (this.platform.is("cordova")) {
-      if (!this.userData.lightsOn) {
-        this.brightness.getBrightness()
-          .then((value) => {
-            this.userData.lastBrightness = value;
-            this.userData.lightsOn = true;
-          })
-          .then(() => {
-            this.brightness.setBrightness(1.0);
-          });
-
-      }
-      else {
-        this.brightness.setBrightness(this.userData.lastBrightness);
-        this.userData.lightsOn = false;
-      }
-    }
-    else{
-      if (!this.userData.lightsOn) {
-        this.userData.lightsOn = true;
-      }
-      else {
-        this.userData.lightsOn = false;
-      }
+      this.brightness.setBrightness(1.0);
     }
   }
-
-  lightbulbIcon() {
-    return this.userData.lightsOn ? this.lightsOnIcon: this.lightsOffIcon;
+  ionViewWillLeave() {
+    if (this.platform.is("cordova")) {
+      this.brightness.setBrightness(-1.0);
+    }
   }
 }
