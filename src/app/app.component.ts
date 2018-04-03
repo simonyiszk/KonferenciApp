@@ -33,6 +33,8 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      let nav = app.getActiveNav();
+      let activeView: ViewController = nav.getActive();
 
       if (platform.is("cordova")) {
         /*Onesignal id and firebase id*/
@@ -46,15 +48,19 @@ export class MyApp {
         oneSignal.handleNotificationReceived().subscribe(message => {
           // do something when notification is received
         });
-        oneSignal.handleNotificationOpened().subscribe(() => {
+        oneSignal.handleNotificationOpened().subscribe((message) => {
           // do something when a notification is opened
+          if (!message.notification.isAppInFocus) {
+            userData.currentPage = "favorite";
+            nav.parent.select(1);
+          }
         });
 
         oneSignal.endInit();
       }
 
       statusBar.styleLightContent();
-      if(platform.is("android")){
+      if (platform.is("android")) {
         headerColor.tint("#42162C");
         statusBar.backgroundColorByHexString("#42162C");
       }
@@ -64,10 +70,6 @@ export class MyApp {
       splashScreen.hide();
 
       platform.registerBackButtonAction(() => {
-        let nav = app.getActiveNav();
-
-        let activeView: ViewController = nav.getActive();
-
         if (nav.canGoBack()) {
           nav.pop();
         } else if (activeView.component.name == "HomePage") {
