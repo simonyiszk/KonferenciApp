@@ -52,11 +52,12 @@ export class MyApp {
 
         oneSignal.endInit();
       }
-      statusBar.overlaysWebView(false);
-      /*statusBar.styleLightContent();
+
+      statusBar.styleLightContent();
       if(platform.is("android")){
-        headerColor.tint("#FFFFFF");
-      }*/
+        headerColor.tint("#42162C");
+        statusBar.backgroundColorByHexString("#42162C");
+      }
       //Dunno if it works or not
       //statusBar.styleDefault();
 
