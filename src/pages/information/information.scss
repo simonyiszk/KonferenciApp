@@ -3,6 +3,13 @@ page-information {
         background: white;
         position: relative;
 
+        .report-button{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            height: 2rem;
+        }
+
         .organizer-container{
             margin: 2rem 1rem;
         }

@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, Platform, AlertController } from 'ionic-angular';
 
 import { InformationProvider } from '../../providers/information/information';
 
@@ -11,7 +11,7 @@ export class InformationPage {
 
   data: any = {};
 
-  constructor(public infoData: InformationProvider, public platform: Platform, public navCtrl: NavController) {
+  constructor(public infoData: InformationProvider, public alertCtrl: AlertController, public platform: Platform, public navCtrl: NavController) {
     infoData.get().subscribe(data => {
       this.data = data;
       console.log(data);
@@ -25,6 +25,44 @@ export class InformationPage {
 
   ionViewDidLoad() {
     this.resizeCircle(this.platform.width());
+  }
+
+  reportIssue(){
+    let issueAlert = this.alertCtrl.create({
+      title: "Hiba jelentése",
+      message: "Amennyiben valamilyen hibát észleltél az alkalmazásban, kérjük jelezd nekünk",
+      inputs: [
+        {
+          name: 'message',
+          placeholder: 'Üzenet'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Mégse',
+          role: 'cancel',
+          handler: data => {
+          }
+        },
+        {
+          text: 'Küldés',
+          handler: data => {
+            if (data.message) {
+              // Send message
+              responseAlert.present();
+            } else {
+              // Empty message
+              return false;
+            }
+          }
+        }
+      ]
+    });
+    let responseAlert = this.alertCtrl.create({
+      title:"Köszönjük a visszajelzést!",
+      buttons: ['OK']
+    });
+    issueAlert.present();
   }
 
   resizeCircle(width: number) {
