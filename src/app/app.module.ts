@@ -30,6 +30,7 @@ import { PresentationProvider } from '../providers/presentation/presentation';
 import { UserProvider } from '../providers/user/user';
 import { InformationProvider } from '../providers/information/information';
 import { ExpoProvider } from '../providers/expo/expo';
+import { PostProvider } from '../providers/post/post';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { ExpoProvider } from '../providers/expo/expo';
     PresentationProvider,
     UserProvider,
     InformationProvider,
-    ExpoProvider
+    ExpoProvider,
+    PostProvider
   ]
 })
 export class AppModule {}
