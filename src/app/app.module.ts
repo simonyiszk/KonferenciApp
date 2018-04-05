@@ -31,6 +31,7 @@ import { UserProvider } from '../providers/user/user';
 import { InformationProvider } from '../providers/information/information';
 import { ExpoProvider } from '../providers/expo/expo';
 import { PostProvider } from '../providers/post/post';
+import { PeriodicProvider } from '../providers/periodic/periodic';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { PostProvider } from '../providers/post/post';
     UserProvider,
     InformationProvider,
     ExpoProvider,
-    PostProvider
+    PostProvider,
+    PeriodicProvider
   ]
 })
 export class AppModule {}
