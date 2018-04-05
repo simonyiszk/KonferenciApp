@@ -16,6 +16,9 @@ import { UserProvider } from '../../providers/user/user';
 })
 export class PresentationDetailsPage {
 
+  favoriteIcon = "./assets/icon/heart-favorite.svg";
+  unfavoriteIcon = "./assets/icon/heart-unfavorite.svg";
+  
   presentation: any;
   name: any;
   question: any;
@@ -46,7 +49,7 @@ export class PresentationDetailsPage {
       });
     }
   }
-  isFavorite(): string {
-    return this.userData.isFavorite(this.presentation.id) ? "ios-heart" : "ios-heart-outline";
+  isFavorite():string{
+    return this.userData.isFavorite(this.presentation.id) ? this.favoriteIcon : this.unfavoriteIcon;
   }
 }

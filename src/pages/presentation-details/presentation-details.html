@@ -24,7 +24,9 @@
     </div>
     <div class="title-section">
       <div class="details-presentation">{{presentation.title}}</div>
-      <ion-icon name="{{isFavorite()}}" (click)="makeItFavorite()"></ion-icon>
+      <div class="heartDiv" (click)="makeItFavorite()">
+        <img src="{{isFavorite()}}" />
+      </div>
     </div>
     <div class="desc-section" [innerHTML]=presentation.text>
     </div>

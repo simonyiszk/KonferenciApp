@@ -27,11 +27,16 @@ page-presentation-details {
         display: flex;
         justify-content: space-between;
         font-size: 3rem;
-        ion-icon {
-            font-size: 5rem;
-        }
         .details-presentation{
             padding-right: 1rem;
+        }
+        .heartDiv {
+            height: 4rem;
+            flex-shrink: 0;
+            > img {
+                height: 100%;
+
+            }
         }
     }
     .desc-section{
