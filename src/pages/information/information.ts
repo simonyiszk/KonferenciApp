@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { NavController, Platform, AlertController } from 'ionic-angular';
 
 import { InformationProvider } from '../../providers/information/information';
+import { PostProvider } from '../../providers/post/post';
 
 @Component({
   selector: 'page-information',
@@ -11,7 +12,7 @@ export class InformationPage {
 
   data: any = {};
 
-  constructor(public infoData: InformationProvider, public alertCtrl: AlertController, public platform: Platform, public navCtrl: NavController) {
+  constructor(public postData: PostProvider, public infoData: InformationProvider, public alertCtrl: AlertController, public platform: Platform, public navCtrl: NavController) {
     infoData.get().subscribe(data => {
       this.data = data;
       console.log(data);
@@ -27,7 +28,7 @@ export class InformationPage {
     this.resizeCircle(this.platform.width());
   }
 
-  reportIssue(){
+  reportIssue() {
     let issueAlert = this.alertCtrl.create({
       title: "Hiba jelentése",
       message: "Amennyiben valamilyen hibát észleltél az alkalmazásban, kérjük jelezd nekünk",
@@ -48,8 +49,11 @@ export class InformationPage {
           text: 'Küldés',
           handler: data => {
             if (data.message) {
-              // Send message
-              responseAlert.present();
+              this.postData.sendReport(data.message).then((response) => {
+                responseAlert.present();
+              }).catch((error) => {
+                console.log("Something went wrong:", error);
+              });
             } else {
               // Empty message
               return false;
@@ -59,7 +63,7 @@ export class InformationPage {
       ]
     });
     let responseAlert = this.alertCtrl.create({
-      title:"Köszönjük a visszajelzést!",
+      title: "Köszönjük a visszajelzést!",
       buttons: ['OK']
     });
     issueAlert.present();
@@ -81,7 +85,7 @@ export class InformationPage {
     const rStr = r + "rem";
     document.getElementById("svgcircle").setAttribute('r', rStr);
 
-    const yStr = (r + height-5) + "rem";
+    const yStr = (r + height - 5) + "rem";
     document.getElementById("svgcircle").setAttribute('cy', yStr);
   }
 }
