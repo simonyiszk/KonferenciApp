@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { Device } from '@ionic-native/device';
 
+import { UserProvider } from '../user/user';
 /*
   Generated class for the PostProvider provider.
 
@@ -18,7 +19,7 @@ export class PostProvider {
   devicePlatform: any;
   deviceVersion: any;
 
-  constructor(public device: Device, public http: Http, public platform: Platform) {
+  constructor(public userData: UserProvider, public device: Device, public http: Http, public platform: Platform) {
     if (platform.is("cordova")) {
       this.deviceUUID = device.uuid;
       this.devicePlatform = device.platform;
@@ -45,7 +46,29 @@ export class PostProvider {
       message: msg
     });
 
+    return this.http.post('http://192.168.0.104:8080/reports', data, options).toPromise();
+  }
+
+  sendFavorites() {
+    let headers = new Headers(
+      {
+        'Content-Type': 'application/json'
+      });
+    let options = new RequestOptions({ headers: headers });
+
+    let data = JSON.stringify({
+      deviceID: this.deviceUUID,
+      email: this.userData.username,
+      favorites: this.arrayToString(this.userData.favorites)
+    });
+
     return this.http.post('http://192.168.0.104:8080/favorites', data, options).toPromise();
   }
 
+  //[1,2,3]=>"1,2,3,"
+  arrayToString(arr:number[]):string {
+    return arr.reduce((accumulator, currentvalue) => {
+      return accumulator+currentvalue+',';
+    }, "");
+  }
 }
