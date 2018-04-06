@@ -1,0 +1,3 @@
+export const environment = {
+  logURL: 'http://example.com/api/',
+};

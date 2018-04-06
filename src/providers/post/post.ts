@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { Device } from '@ionic-native/device';
 
 import { UserProvider } from '../user/user';
+import { environment } from '../../../environments/API';
 /*
   Generated class for the PostProvider provider.
 
@@ -49,7 +50,7 @@ export class PostProvider {
       message: msg
     });
 
-    return this.http.post('http://192.168.0.105:8080/reports', data, options).toPromise();
+    return this.http.post(`${environment.logURL}reports`, data, options).toPromise();
   }
 
   sendFavorites() {
@@ -65,7 +66,7 @@ export class PostProvider {
       favorites: this.arrayToString(this.userData.favorites)
     });
 
-    return this.http.post('http://192.168.0.105:8080/favorites', data, options).toPromise();
+    return this.http.post(`${environment.logURL}favorites`, data, options).toPromise();
   }
 
   //[1,2,3]=>"1,2,3,"
