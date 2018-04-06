@@ -20,16 +20,19 @@ export class PostProvider {
   deviceVersion: any;
 
   constructor(public userData: UserProvider, public device: Device, public http: Http, public platform: Platform) {
-    if (platform.is("cordova")) {
-      this.deviceUUID = device.uuid;
-      this.devicePlatform = device.platform;
-      this.deviceVersion = device.version;
-    }
-    else {
-      this.deviceUUID = 1;
-      this.devicePlatform = "Platform";
-      this.deviceVersion = "1.0";
-    }
+
+    platform.ready().then(() => {
+      if (platform.is("cordova")) {
+        this.deviceUUID = this.device.uuid;
+        this.devicePlatform = this.device.platform;
+        this.deviceVersion = this.device.version;
+      }
+      else {
+        this.deviceUUID = 1;
+        this.devicePlatform = "Platform";
+        this.deviceVersion = "1.0";
+      }
+    });
   }
 
   sendReport(msg: string) {
@@ -46,7 +49,7 @@ export class PostProvider {
       message: msg
     });
 
-    return this.http.post('http://192.168.0.104:8080/reports', data, options).toPromise();
+    return this.http.post('http://192.168.0.105:8080/reports', data, options).toPromise();
   }
 
   sendFavorites() {
@@ -62,13 +65,13 @@ export class PostProvider {
       favorites: this.arrayToString(this.userData.favorites)
     });
 
-    return this.http.post('http://192.168.0.104:8080/favorites', data, options).toPromise();
+    return this.http.post('http://192.168.0.105:8080/favorites', data, options).toPromise();
   }
 
   //[1,2,3]=>"1,2,3,"
-  arrayToString(arr:number[]):string {
+  arrayToString(arr: number[]): string {
     return arr.reduce((accumulator, currentvalue) => {
-      return accumulator+currentvalue+',';
+      return accumulator + currentvalue + ',';
     }, "");
   }
 }

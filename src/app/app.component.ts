@@ -12,6 +12,7 @@ import { PresentationProvider } from "../providers/presentation/presentation";
 import { UserProvider } from "../providers/user/user";
 import { InformationProvider } from "../providers/information/information";
 import { ExpoProvider } from "../providers/expo/expo";
+import { PeriodicProvider } from "../providers/periodic/periodic";
 
 @Component({
   templateUrl: "app.html"
@@ -22,6 +23,7 @@ export class MyApp {
   constructor(
     headerColor: HeaderColor,
     oneSignal: OneSignal,
+    periodicData: PeriodicProvider,
     expoData: ExpoProvider,
     infoData: InformationProvider,
     userData: UserProvider,
