@@ -24,9 +24,7 @@ export class ProgramPage {
   change() {
     this.presData.filterPresentation(this.userData.currentPage).subscribe((data: any) => {
       this.data = data;
-      console.log(this.data);
     });
-    console.log(this.userData.currentPage);
   }
   swipeTo(page) {
     this.userData.currentPage = page;

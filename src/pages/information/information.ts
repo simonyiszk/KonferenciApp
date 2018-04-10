@@ -15,7 +15,6 @@ export class InformationPage {
   constructor(public postData: PostProvider, public infoData: InformationProvider, public alertCtrl: AlertController, public platform: Platform, public navCtrl: NavController) {
     infoData.get().subscribe(data => {
       this.data = data;
-      console.log(data);
     });
   }
 

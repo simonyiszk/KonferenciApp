@@ -75,15 +75,11 @@ export class MyApp {
       platform.registerBackButtonAction(() => {
         let nav = app.getActiveNav();
         let activeView: ViewController = nav.getActive();
-        console.log("ac", activeView);
         if (nav.canGoBack()) {
-          console.log("ac1");
           nav.pop();
         } else if (activeView.instance instanceof HomePage) {
-          console.log("ac2");
           platform.exitApp();
         } else {
-          console.log("ac3");
           nav.parent.select(0);
         }
       });

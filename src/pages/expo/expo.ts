@@ -14,7 +14,6 @@ export class ExpoPage {
   constructor(public expoData: ExpoProvider, public alertCtrl: AlertController, public navCtrl: NavController) {
     expoData.get().subscribe((data: any) => {
       this.data = data;
-      console.log(data);
     });
   }
 
