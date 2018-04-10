@@ -50,12 +50,15 @@ export class GamePage {
   }
   ionViewDidEnter() {
     if (this.platform.is("cordova")) {
-      this.brightness.setBrightness(1.0);
+      this.brightness.getBrightness().then((value) => {
+        this.userData.lastBrightness = value;
+        this.brightness.setBrightness(1.0);
+      });
     }
   }
   ionViewWillLeave() {
     if (this.platform.is("cordova")) {
-      this.brightness.setBrightness(-1.0);
+      this.brightness.setBrightness(this.userData.lastBrightness);
     }
   }
 }

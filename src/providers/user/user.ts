@@ -18,6 +18,7 @@ export class UserProvider {
   username: string = "Guest";
   favorites: number[] = [];
   currentPage = "IB028";
+  lastBrightness: number;
 
   constructor(public http: Http, public storage: Storage, public oneSignal: OneSignal) {
     this.storage.get("userLogin").then((value) => {
