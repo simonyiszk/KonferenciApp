@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.konferenciapp267822" version="1.2.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.simonyi.konferenciapp" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>KonferenciApp</name>
     <description>A XV. Simonyi Konferencia hivatalos mobil applikációja</description>
-    <author email="frey.balazs@simonyi.bme.hu" href="http://konferencia.simonyi.bme.hu/">Konferencia rendezők</author>
+    <author email="frey.balazs@simonyi.bme.hu" href="http://konferencia.simonyi.bme.hu/">Balazs Frey</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
