@@ -30,7 +30,7 @@ export class InformationPage {
   reportIssue() {
     let issueAlert = this.alertCtrl.create({
       title: "Hiba jelentése",
-      message: "Amennyiben valamilyen hibát észleltél az alkalmazásban, kérjük jelezd nekünk",
+      message: "Amennyiben valamilyen hibát tapasztaltál az alkalmazásban vagy a rendezvényen, kérjük jelezd nekünk",
       inputs: [
         {
           name: 'message',
