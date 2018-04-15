@@ -49,17 +49,27 @@ export class ExpoProvider {
     });
   }
   sendData() {
-    const data = this.formatJSON();
-    console.log(`${environment.gameURL}?${data}`)
-    this.http.get(`${environment.gameURL}?${data}`).subscribe((data: any) => {
-      console.log(data);
+    if (this.userList.length > 0) {
+      const data = this.formatJSON();
+      console.log(`${environment.gameURL}?${data}`)
+      this.http.get(`${environment.gameURL}?${data}`).subscribe((data: any) => {
+        console.log(data);
+        let toast = this.toastCtrl.create({
+          message: 'Sikeresen szinkronizáció',
+          duration: 3000,
+          position: 'top'
+        });
+        toast.present();
+      });
+    }
+    else {
       let toast = this.toastCtrl.create({
-        message: 'Sikeresen szinkronizáció',
+        message: 'Nincs szkennelt adat',
         duration: 3000,
         position: 'top'
       });
       toast.present();
-    });;
+    }
   }
   formatJSON(): string {
     const userJSON = this.userList.reduce((accumulator, currentValue) => {
