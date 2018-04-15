@@ -12,6 +12,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ExpoProvider } from '../providers/expo/expo';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +23,8 @@ import { ExpoProvider } from '../providers/expo/expo';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
