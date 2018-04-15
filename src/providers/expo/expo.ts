@@ -24,6 +24,8 @@ export class ExpoProvider {
   }
 
   setExpoID(id: number) {
-    this.expoID = id;
+    this.storage.set("expoID", id).then(() => {
+      this.expoID = id;
+    });
   }
 }
