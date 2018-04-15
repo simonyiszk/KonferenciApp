@@ -17,10 +17,12 @@ export class AdminPage {
 
   loggedIn: boolean;
   password: string;
+  expoID: number;
+  numberInput: string;
 
   constructor(public expoData: ExpoProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.loggedIn = this.expoData.adminLogged;
-    console.log("ASDASD")
+    this.expoID = this.expoData.expoID
   }
 
   login() {
@@ -28,5 +30,16 @@ export class AdminPage {
       this.expoData.adminLogged = true;
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     }
+  }
+  setExpo() {
+    const parsedNumber = parseInt(this.numberInput)
+    if (parsedNumber) {
+      this.expoData.setExpoID(parsedNumber).then(() => {
+        this.expoID = parsedNumber;
+      })
+    }
+  }
+  synchronize() {
+    this.expoData.sendData();
   }
 }

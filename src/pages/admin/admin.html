@@ -1,3 +1,4 @@
+<ion-input type="number" placeholder="Number Input with no label"></ion-input>
 <!--
   Generated template for the AdminPage page.
 
@@ -16,13 +17,20 @@
 <ion-content padding>
   <div *ngIf="!loggedIn">
     <form (ngSubmit)="login()">
-      <ion-item class="input-section">
+      <ion-item>
         <ion-input [(ngModel)]="password" name="password"></ion-input>
       </ion-item>
       <button ion-button type="submit" block>Bejelentkezés</button>
     </form>
   </div>
   <div *ngIf="loggedIn">
-    qweqwe
+    Jelenlegi ID: {{expoID}}
+    <form (ngSubmit)="setExpo()">
+      <ion-item>
+        <ion-input [(ngModel)]="numberInput" name="numberInput" type="number"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Beállít</button>
+    </form>
+    <button ion-button (click)="synchronize()" block>Szinkronizálás</button>
   </div>
 </ion-content>
