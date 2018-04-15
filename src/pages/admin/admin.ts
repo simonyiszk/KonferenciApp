@@ -25,7 +25,7 @@ export class AdminPage {
 
   constructor(public expoData: ExpoProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.loggedIn = this.expoData.adminLogged;
-    this.expoID = this.expoData.expoID
+    this.expoID = this.expoData.expoID;
   }
 
   login() {
@@ -33,6 +33,7 @@ export class AdminPage {
       this.expoData.adminLogged = true;
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     }
+    this.password = "";
   }
   setExpo() {
     const parsedNumber = parseInt(this.numberInput)
@@ -41,6 +42,7 @@ export class AdminPage {
         this.expoID = parsedNumber;
       })
     }
+    this.numberInput = "";
   }
   synchronize() {
     this.expoData.sendData();
