@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage';
 
+import { ToastController } from 'ionic-angular'
+
 import { environment } from '../../../environments/API';
 /*
   Generated class for the ExpoProvider provider.
@@ -17,7 +19,7 @@ export class ExpoProvider {
   adminLogged: boolean;
   userList: string[];
 
-  constructor(private storage: Storage, public http: Http) {
+  constructor(public toastCtrl: ToastController, private storage: Storage, public http: Http) {
     this.userList = [];
     this.storage.get("expoID").then((value) => {
       if (value) {
@@ -41,14 +43,27 @@ export class ExpoProvider {
       this.userList.push(user);
     });
   }
-  sendData() {
-    const data=this.formatJSON();
-    console.log(`${environment.gameURL}?${data}`)
-    this.http.get(`${environment.gameURL}?${data}`);
+  deleteUsers() {
+    this.storage.remove("users").then(() => {
+      this.userList = [];
+    });
   }
-  formatJSON():string {
+  sendData() {
+    const data = this.formatJSON();
+    console.log(`${environment.gameURL}?${data}`)
+    this.http.get(`${environment.gameURL}?${data}`).subscribe((data: any) => {
+      console.log(data);
+      let toast = this.toastCtrl.create({
+        message: 'Sikeresen szinkronizáció',
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+    });;
+  }
+  formatJSON(): string {
     const userJSON = this.userList.reduce((accumulator, currentValue) => {
-      return accumulator+`{"name":"${currentValue}"},`;
+      return accumulator + `{"mail":"${currentValue}"},`;
     }, "").slice(0, -1)
     return `id=${this.expoID}&json=[${userJSON}]`;
   }

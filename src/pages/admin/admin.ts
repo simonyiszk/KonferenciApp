@@ -45,4 +45,11 @@ export class AdminPage {
   synchronize() {
     this.expoData.sendData();
   }
+  delete() {
+    this.expoData.deleteUsers();
+  }
+  logout() {
+    this.expoData.adminLogged = false;
+    this.navCtrl.setRoot(this.navCtrl.getActive().component);
+  }
 }

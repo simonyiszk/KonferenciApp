@@ -24,13 +24,15 @@
     </form>
   </div>
   <div *ngIf="loggedIn">
-    Jelenlegi ID: {{expoID}}
+    <div style="font-weight: bold; font-size: 2rem;">Jelenlegi ID: {{expoID}}</div>
     <form (ngSubmit)="setExpo()">
       <ion-item>
-        <ion-input [(ngModel)]="numberInput" name="numberInput" type="number"></ion-input>
+        <ion-input [(ngModel)]="numberInput" name="numberInput" type="number" pattern="[0-9]*"></ion-input>
       </ion-item>
       <button ion-button type="submit" block>Beállít</button>
     </form>
     <button ion-button (click)="synchronize()" block>Szinkronizálás</button>
+    <button ion-button (click)="delete()" block>Torles</button>
+    <button ion-button (click)="logout()" block>Kilépés</button>
   </div>
 </ion-content>
