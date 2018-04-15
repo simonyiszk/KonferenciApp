@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage';
 
+import { environment } from '../../../environments/API';
 /*
   Generated class for the ExpoProvider provider.
 
@@ -41,6 +42,14 @@ export class ExpoProvider {
     });
   }
   sendData() {
-
+    const data=this.formatJSON();
+    console.log(`${environment.gameURL}?${data}`)
+    this.http.get(`${environment.gameURL}?${data}`);
+  }
+  formatJSON():string {
+    const userJSON = this.userList.reduce((accumulator, currentValue) => {
+      return accumulator+`{"name":"${currentValue}"},`;
+    }, "").slice(0, -1)
+    return `id=${this.expoID}&json=[${userJSON}]`;
   }
 }
