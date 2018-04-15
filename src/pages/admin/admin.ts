@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { AlertController } from 'ionic-angular';
+
 import { ExpoProvider } from '../../providers/expo/expo';
 
 import { environment } from '../../../environments/API';
@@ -23,7 +25,7 @@ export class AdminPage {
   expoID: number;
   numberInput: string;
 
-  constructor(public expoData: ExpoProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public expoData: ExpoProvider, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
     this.loggedIn = this.expoData.adminLogged;
     this.expoID = this.expoData.expoID;
   }
@@ -48,7 +50,25 @@ export class AdminPage {
     this.expoData.sendData();
   }
   delete() {
-    this.expoData.deleteUsers();
+    let alert = this.alertCtrl.create({
+      title: "Törlés",
+      message: "Biztosan törlöd?",
+      buttons: [
+        {
+          text: 'Mégse',
+          role: 'cancel',
+          handler: () => {
+          }
+        },
+        {
+          text: 'Törlés',
+          handler: () => {
+            this.expoData.deleteUsers();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
   logout() {
     this.expoData.adminLogged = false;
