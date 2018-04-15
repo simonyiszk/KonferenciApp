@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+
+import { Storage } from '@ionic/storage';
 
 /*
   Generated class for the ExpoProvider provider.
@@ -10,8 +12,18 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ExpoProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello ExpoProvider Provider');
+  expoID: number;
+  adminLogged: boolean;
+
+  constructor(private storage: Storage, public http: Http) {
+    this.storage.get("expoID").then((value) => {
+      if (value) {
+        this.expoID = value;
+      }
+    })
   }
 
+  setExpoID(id: number) {
+    this.expoID = id;
+  }
 }
