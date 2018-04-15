@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
+import { ExpoProvider } from '../../providers/expo/expo';
 /**
  * Generated class for the ScanPage page.
  *
@@ -15,12 +16,12 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 })
 export class ScanPage {
 
-  constructor(private barcodeScanner: BarcodeScanner, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public expoData: ExpoProvider, private barcodeScanner: BarcodeScanner, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   scanClicked() {
     this.barcodeScanner.scan().then(barcodeData => {
-      console.log('Barcode data', barcodeData);
+      this.expoData.addUser(barcodeData.text);
      }).catch(err => {
          console.log('Error', err);
      });

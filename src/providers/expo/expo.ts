@@ -14,11 +14,18 @@ export class ExpoProvider {
 
   expoID: number;
   adminLogged: boolean;
+  userList: string[];
 
   constructor(private storage: Storage, public http: Http) {
+    this.userList = [];
     this.storage.get("expoID").then((value) => {
       if (value) {
         this.expoID = value;
+      }
+    })
+    this.storage.get("users").then((value) => {
+      if (value) {
+        this.userList = value;
       }
     })
   }
@@ -26,6 +33,11 @@ export class ExpoProvider {
   setExpoID(id: number): Promise<any> {
     return this.storage.set("expoID", id).then(() => {
       this.expoID = id;
+    });
+  }
+  addUser(user: string) {
+    this.storage.set("users", [...this.userList, user]).then(() => {
+      this.userList.push(user);
     });
   }
   sendData() {
