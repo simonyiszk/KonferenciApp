@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { ExpoProvider } from '../../providers/expo/expo';
+
+import { environment } from '../../../environments/API';
+
 /**
  * Generated class for the AdminPage page.
  *
@@ -26,7 +29,7 @@ export class AdminPage {
   }
 
   login() {
-    if (this.password === "123") {
+    if (this.password === `${environment.adminPassword}`) {
       this.expoData.adminLogged = true;
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     }

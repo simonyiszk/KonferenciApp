@@ -1,3 +1,4 @@
 export const environment = {
   gameURL: 'http://example.com/api',
+  adminPassword: "123",
 };
