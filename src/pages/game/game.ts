@@ -49,7 +49,7 @@ export class GamePage {
       });
   }
   ionViewDidEnter() {
-    if (this.platform.is("cordova")) {
+    if (this.loggedIn && this.platform.is("cordova")) {
       this.brightness.getBrightness().then((value) => {
         this.userData.lastBrightness = value;
         this.brightness.setBrightness(1.0);
@@ -57,7 +57,7 @@ export class GamePage {
     }
   }
   ionViewWillLeave() {
-    if (this.platform.is("cordova")) {
+    if (this.loggedIn && this.platform.is("cordova")) {
       this.brightness.setBrightness(this.userData.lastBrightness);
     }
   }
