@@ -9,15 +9,16 @@ main-button {
         display: flex;
         flex-direction: column;
         padding: 1rem;
-        @include gap(1rem 0);
         justify-content: center;
         .title {
             font-size: 1.7em;
+            flex-basis: 1.7em;
             @include media-height(md){
                 font-size: 2em;
+                flex-basis: 2em;
             }
-            flex-basis: 50%;
             flex-grow: 1;
+            margin-bottom: 2rem;
         }
         .icon {
             flex-grow: 1;
