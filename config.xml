@@ -21,6 +21,7 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="orientation" value="portrait" />
+    <preference name="StatusBarBackgroundColor" value="#42162C" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -87,9 +88,9 @@
     <plugin name="onesignal-cordova-plugin" spec="^2.3.3" />
     <allow-navigation href="http://192.168.1.73:8100" />
     <plugin name="cordova-plugin-brightness" spec="^0.2.0" />
-    <engine name="ios" spec="4.5.4" />
-    <engine name="android" spec="6.4.0" />
     <plugin name="cordova-plugin-headercolor" spec="^1.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
     <plugin name="cordova-plugin-device" spec="^2.0.1" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="6.4.0" />
 </widget>

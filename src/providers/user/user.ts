@@ -23,16 +23,14 @@ export class UserProvider {
   constructor(public http: Http, public storage: Storage, public oneSignal: OneSignal) {
     this.storage.get("userLogin").then((value) => {
       this.loggedIn = !!value;
+      if (this.loggedIn) {
+        this.username = value;
+      }
       return value;
     })
-      .then((value) => {
-        if (this.loggedIn) {
-          this.username = value;
-          this.storage.get("favorites").then((value) => {
-            this.favorites = value ? value : [];
-          });
-        }
-      });
+    this.storage.get("favorites").then((value) => {
+      this.favorites = value ? value : [];
+    });
   }
 
   login(email: string): Promise<any> {
