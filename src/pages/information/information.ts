@@ -51,6 +51,7 @@ export class InformationPage {
               this.postData.sendReport(data.message).then((response) => {
                 responseAlert.present();
               }).catch((error) => {
+                errorAlert.present();
                 console.log("Something went wrong:", error);
               });
             } else {
@@ -63,6 +64,10 @@ export class InformationPage {
     });
     let responseAlert = this.alertCtrl.create({
       title: "Köszönjük a visszajelzést!",
+      buttons: ['OK']
+    });
+    let errorAlert = this.alertCtrl.create({
+      title: "Valami hiba történt. Próbáld újra később.",
       buttons: ['OK']
     });
     issueAlert.present();
