@@ -71,7 +71,7 @@ export class InformationPage {
   resizeCircle(width: number) {
     //(w/2)^2/10 + 2,5 = r
     let height;
-    if (window.matchMedia("(max-width: 370px)").matches) {
+    if (window.matchMedia("(max-width: 350px)").matches) {
       height = 109;
     } else {
       height = 55
