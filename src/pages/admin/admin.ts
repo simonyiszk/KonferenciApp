@@ -37,14 +37,49 @@ export class AdminPage {
     }
     this.password = "";
   }
-  setExpo() {
-    const parsedNumber = parseInt(this.numberInput)
+  setExpoID() {
+    /*const parsedNumber = parseInt(this.numberInput)
     if (parsedNumber) {
       this.expoData.setExpoID(parsedNumber).then(() => {
         this.expoID = parsedNumber;
       })
     }
-    this.numberInput = "";
+    this.numberInput = "";*/
+    let expoAlert = this.alertCtrl.create({
+      title: "ExpoID beállítása",
+      message: `Jelenglegi ID: ${this.expoID}`,
+      inputs: [
+        {
+          name: 'expoid',
+          placeholder: 'ExpoID',
+          type: "number"
+        }
+      ],
+      buttons: [
+        {
+          text: 'Mégse',
+          role: 'cancel',
+          handler: data => {
+          }
+        },
+        {
+          text: 'Küldés',
+          handler: data => {
+            const parsedNumber = parseInt(data.expoid)
+            if (parsedNumber) {
+              this.expoData.setExpoID(parsedNumber).then(() => {
+                this.expoID = parsedNumber;
+              })
+            }
+            else {
+              // Empty message
+              return false;
+            }
+          }
+        }
+      ]
+    });
+    expoAlert.present();
   }
   synchronize() {
     this.expoData.sendData();
