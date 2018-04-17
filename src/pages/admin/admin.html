@@ -20,19 +20,14 @@
       <ion-item>
         <ion-input [(ngModel)]="password" name="password"></ion-input>
       </ion-item>
-      <button ion-button type="submit" block>Bejelentkezés</button>
+      <button ion-button class="admin-button" type="submit" block>Bejelentkezés</button>
     </form>
   </div>
   <div *ngIf="loggedIn">
-    <div style="font-weight: bold; font-size: 2rem;">Jelenlegi ID: {{expoID}}</div>
-    <form (ngSubmit)="setExpo()">
-      <ion-item>
-        <ion-input [(ngModel)]="numberInput" name="numberInput" type="number" pattern="[0-9]*"></ion-input>
-      </ion-item>
-      <button ion-button type="submit" block>Beállít</button>
-    </form>
-    <button ion-button (click)="synchronize()" block>Szinkronizálás</button>
-    <button ion-button (click)="delete()" block>Torles</button>
-    <button ion-button (click)="logout()" block>Kilépés</button>
+    <div class="expoID-text">Jelenlegi ID: {{expoID}}</div>
+    <button ion-button class="admin-button" (click)="setExpoID()" block>ExpoID</button>
+    <button ion-button class="admin-button" (click)="synchronize()" block>Szinkronizálás</button>
+    <button ion-button class="admin-button" (click)="delete()" block>Torles</button>
+    <button ion-button class="admin-button" (click)="logout()" block>Kilépés</button>
   </div>
 </ion-content>
