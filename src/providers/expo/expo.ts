@@ -39,9 +39,11 @@ export class ExpoProvider {
     });
   }
   addUser(user: string) {
-    this.storage.set("users", [...this.userList, user]).then(() => {
-      this.userList.push(user);
-    });
+    if (this.userList.filter((v) => v === user).length == 0) {
+      this.storage.set("users", [...this.userList, user]).then(() => {
+        this.userList.push(user);
+      });
+    }
   }
   deleteUsers() {
     this.storage.remove("users").then(() => {
