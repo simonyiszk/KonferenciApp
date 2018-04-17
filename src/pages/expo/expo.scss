@@ -14,10 +14,9 @@ page-expo {
         }
         ion-scroll {
             flex-grow: 1;
-            margin-top: 1rem;
-            /*> .scroll-content {
-
-            }*/
+            > .scroll-content {
+                padding: 0 !important;
+            }
         }
         .expo-container {
             margin: 1.5rem 0.5rem;
