@@ -23,27 +23,28 @@ export class ScanPage {
 
   scanClicked() {
     const options = {
-      showTorchButton: true,
       orientation: 'portrait',
       resultDisplayDuration: 0
     }
     this.barcodeScanner.scan(options).then(barcodeData => {
-      this.expoData.addUser(barcodeData.text);
-      let alert = this.alertCtrl.create({
-        title: "Siker",
-        message: "Sikeres beolvasás",
-        buttons: [
-          {
-            text: 'OK',
-            handler: () => {
+      if (!barcodeData.cancelled) {
+        this.expoData.addUser(barcodeData.text);
+        let alert = this.alertCtrl.create({
+          title: "Siker",
+          message: "Sikeres beolvasás",
+          buttons: [
+            {
+              text: 'OK',
+              handler: () => {
+              }
             }
-          }
-        ]
-      });
-      alert.present();
-     }).catch(err => {
-         console.log('Error', err);
-     });
+          ]
+        });
+        alert.present();
+      }
+    }).catch(err => {
+      console.log('Error', err);
+    });
   }
 
 }
