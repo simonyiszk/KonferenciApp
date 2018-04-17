@@ -29,5 +29,8 @@
     <button ion-button class="admin-button" (click)="synchronize()" block>Szinkronizálás</button>
     <button ion-button class="admin-button" (click)="delete()" block>Torles</button>
     <button ion-button class="admin-button" (click)="logout()" block>Kilépés</button>
+    <div *ngFor="let user of expoData.userList" class="userList">
+      {{user}}
+    </div>
   </div>
 </ion-content>
