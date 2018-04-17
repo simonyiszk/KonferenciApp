@@ -15,7 +15,10 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
+      statusBar.styleLightContent();
+        if (platform.is("android")) {
+          statusBar.backgroundColorByHexString("#42162C");
+        }
       splashScreen.hide();
 
       platform.registerBackButtonAction(() => {
