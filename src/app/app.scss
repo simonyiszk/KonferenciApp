@@ -14,3 +14,40 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+$SIDEMENU_TOP: #771215;
+$SIDEMENU_BOTTOM: #581D3A;
+
+.content {
+    background: -webkit-gradient(230deg, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -o-linear-gradient(230deg, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -moz-linear-gradient(230deg, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: linear-gradient(230deg, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+ion-title {
+    text-align: center;
+}
